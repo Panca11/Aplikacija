@@ -16,5 +16,12 @@ namespace Aplikacija
         {
             InitializeComponent();
         }
+
+        private void btnRegistracija_Click(object sender, EventArgs e)
+        {
+            Registracija reg = new Registracija();
+            this.Hide();
+            reg.Show();
+        }
     }
 }

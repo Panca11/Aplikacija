@@ -66,6 +66,9 @@
     <Compile Include="Registracija.Designer.cs">
       <DependentUpon>Registracija.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Logovanje.resx">
       <DependentUpon>Logovanje.cs</DependentUpon>
     </EmbeddedResource>

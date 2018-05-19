@@ -22,14 +22,14 @@ namespace Aplikacija
         {
             Application.Exit();
         }
-        string conn = ("Data Source=DESKTOP-MU6AODF;Initial Catalog=EDU;Integrated Security=True");
+        string conn = ("Data Source=localhost;Initial Catalog=EDU;Integrated Security=True");
         private void btnLogovanje_Click(object sender, EventArgs e)
         {
             try
             {
-                if(tbKorisnickoIme.Text==""&& tbSifra.Text=="")
+                if(tbKorisnickoIme.Text=="" || tbSifra.Text=="")
                 {
-                    MessageBox.Show("Unesite korisnicko ime i sifru!!");
+                    MessageBox.Show("Morate popuniti sva polja.");
                 }
                 else
                 {
