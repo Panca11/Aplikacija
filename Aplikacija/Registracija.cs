@@ -22,5 +22,8 @@ namespace Aplikacija
             Application.Exit();
             //Ako ovo ne radi najebo si klinac.asdasdas
         }
+
+
+        // ovo je komentar
     }
 }
