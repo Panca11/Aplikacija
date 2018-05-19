@@ -92,6 +92,7 @@
             this.btnLogovanje.TabIndex = 4;
             this.btnLogovanje.Text = "Logovanje";
             this.btnLogovanje.UseVisualStyleBackColor = false;
+            this.btnLogovanje.Click += new System.EventHandler(this.btnLogovanje_Click);
             // 
             // Exit
             // 
