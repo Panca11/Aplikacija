@@ -20,6 +20,7 @@ namespace Aplikacija
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+            //Ako ovo ne radi najebo si klinac.asdasdas
         }
 
 
