@@ -56,6 +56,7 @@
             this.tbSifra.BackColor = System.Drawing.Color.White;
             this.tbSifra.Location = new System.Drawing.Point(201, 227);
             this.tbSifra.Name = "tbSifra";
+            this.tbSifra.PasswordChar = '*';
             this.tbSifra.Size = new System.Drawing.Size(138, 20);
             this.tbSifra.TabIndex = 1;
             // 
