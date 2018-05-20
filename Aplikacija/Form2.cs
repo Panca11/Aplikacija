@@ -16,5 +16,17 @@ namespace Aplikacija
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Da li zelite da se izlogujete", "izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+                Logovanje l = new Logovanje();
+                l.ShowDialog();
+            }
+        }
     }
 }

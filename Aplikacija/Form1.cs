@@ -23,5 +23,26 @@ namespace Aplikacija
             this.Hide();
             reg.Show();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Da li zelite da se izlogujete", "izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+                Logovanje l = new Logovanje();
+                l.ShowDialog();
+            }
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'eDUDataSet.tab_Kase' table. You can move, or remove it, as needed.
+            this.tab_KaseTableAdapter.Fill(this.eDUDataSet.tab_Kase);
+            // TODO: This line of code loads data into the 'eDUDataSet.tab_Objekti' table. You can move, or remove it, as needed.
+            this.tab_ObjektiTableAdapter.Fill(this.eDUDataSet.tab_Objekti);
+
+        }
     }
 }
