@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace Aplikacija
 {
     public partial class Logovanje : Form
@@ -45,6 +46,7 @@ namespace Aplikacija
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
                 cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
+<<<<<<< HEAD
                 //SqlDataAdapter sda = new SqlDataAdapter("select role from tab_Logovanje where Username=" + tbKorisnickoIme.Text + "and password=" + tbSifra.Text, con);
                 con.Open();
                 
@@ -61,19 +63,45 @@ namespace Aplikacija
                                 ss.Show();
                                 break;
                             }
+=======
 
-                        case "Korisnik":
-                            {
-                                this.Hide();
-                                Form2 mf = new Form2();
-                                mf.Show();
-                                break;
-                            }
+                con.Open();
+                if (cmd.ExecuteScalar().ToString() == "1")//proverava uzete podatke sa forme 
+                {
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
+
+                    connection.Open();
+                    string query = "SELECT role FROM tab_Logovanje WHERE [role] = 'Admin'";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+>>>>>>> 9ca54c1907d055fce8a7f94437142029f1baa493
+
+                    String role = command.ExecuteScalar().ToString();
+
+                    if (role == "True")
+                    {
+                        connection.Close();
+                        MessageBox.Show("Uspesan login");
+                        Form1 frm = new Form1();
+                        this.Hide();    
+                        frm.Show();
                     }
+<<<<<<< HEAD
                             MessageBox.Show("Uspesan login");*/
                     Form1 frm = new Form1();
                     this.Hide();
                     frm.Show();
+=======
+                    else
+                    {
+                        Form2 frm2 = new Form2();
+                        frm2.Show();
+                        this.Hide();
+                    }
+
+                    
+>>>>>>> 9ca54c1907d055fce8a7f94437142029f1baa493
                 }
                 else
                 {
