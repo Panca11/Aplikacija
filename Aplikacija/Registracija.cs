@@ -72,8 +72,8 @@ namespace Aplikacija
                         StringBuilder sb = new StringBuilder();
 
                         sb.Append("INSERT INTO tab_Logovanje");
-                        sb.Append("(Username, password, Aktivnost, name, lastname)");
-                        sb.Append("VALUES (@username, @password, @aktivnost, @name, @lastname) ");
+                        sb.Append("(Username, password, Aktivnost, name, lastname, role)");
+                        sb.Append("VALUES (@username, @password, @aktivnost, @name, @lastname, @role) ");
 
                         SqlCommand komanda = new SqlCommand(sb.ToString(), konekcija);
 
@@ -83,6 +83,7 @@ namespace Aplikacija
                         SqlParameter nameParam = new SqlParameter("@name", SqlDbType.VarChar, 50);
                         SqlParameter lastnameParam = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
                         SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
+                        SqlParameter korisnikParam = new SqlParameter("@role", SqlDbType.VarChar, 50);
 
 
                         // uzima unete podatke iz TextBox i smesta u parametre
@@ -91,12 +92,22 @@ namespace Aplikacija
                         komanda.Parameters.Add(aktivnostParam);
                         komanda.Parameters.Add(nameParam);
                         komanda.Parameters.Add(lastnameParam);
+                        komanda.Parameters.Add(korisnikParam);
 
                         usernameParam.Value = tbKorisnickoIme.Text;
                         passwordParam.Value = tbSifra.Text;
                         aktivnostParam.Value = "1";//Postavlja se Aktivnost na 1(true)
                         nameParam.Value = tbIme.Text;
                         lastnameParam.Value = tbPrezime.Text;
+                        if (cbKorisnik.Checked)
+                        {
+                            korisnikParam.Value = "Korisnik";//Postavlja se da ima ulogu korisnika
+                        }
+                        else
+                        {
+                            korisnikParam.Value = "Admin"; //Postavlja se da ima ulogu admina
+                        }
+                        
 
                         try
                         {

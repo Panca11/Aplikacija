@@ -41,6 +41,7 @@
             this.btnRegistracija = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnResetuj = new System.Windows.Forms.Button();
+            this.cbKorisnik = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,7 @@
             // 
             this.labelKorisnickoIme.AutoSize = true;
             this.labelKorisnickoIme.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKorisnickoIme.Location = new System.Drawing.Point(158, 118);
+            this.labelKorisnickoIme.Location = new System.Drawing.Point(158, 114);
             this.labelKorisnickoIme.Name = "labelKorisnickoIme";
             this.labelKorisnickoIme.Size = new System.Drawing.Size(96, 24);
             this.labelKorisnickoIme.TabIndex = 1;
@@ -68,7 +69,7 @@
             // 
             this.labelSifra.AutoSize = true;
             this.labelSifra.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSifra.Location = new System.Drawing.Point(158, 175);
+            this.labelSifra.Location = new System.Drawing.Point(158, 171);
             this.labelSifra.Name = "labelSifra";
             this.labelSifra.Size = new System.Drawing.Size(37, 24);
             this.labelSifra.TabIndex = 2;
@@ -78,7 +79,7 @@
             // 
             this.labelIme.AutoSize = true;
             this.labelIme.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIme.Location = new System.Drawing.Point(158, 231);
+            this.labelIme.Location = new System.Drawing.Point(158, 227);
             this.labelIme.Name = "labelIme";
             this.labelIme.Size = new System.Drawing.Size(31, 24);
             this.labelIme.TabIndex = 3;
@@ -88,7 +89,7 @@
             // 
             this.labelPrezime.AutoSize = true;
             this.labelPrezime.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPrezime.Location = new System.Drawing.Point(158, 297);
+            this.labelPrezime.Location = new System.Drawing.Point(158, 293);
             this.labelPrezime.Name = "labelPrezime";
             this.labelPrezime.Size = new System.Drawing.Size(59, 24);
             this.labelPrezime.TabIndex = 4;
@@ -96,14 +97,14 @@
             // 
             // tbKorisnickoIme
             // 
-            this.tbKorisnickoIme.Location = new System.Drawing.Point(162, 146);
+            this.tbKorisnickoIme.Location = new System.Drawing.Point(162, 142);
             this.tbKorisnickoIme.Name = "tbKorisnickoIme";
             this.tbKorisnickoIme.Size = new System.Drawing.Size(183, 20);
             this.tbKorisnickoIme.TabIndex = 5;
             // 
             // tbSifra
             // 
-            this.tbSifra.Location = new System.Drawing.Point(162, 202);
+            this.tbSifra.Location = new System.Drawing.Point(162, 198);
             this.tbSifra.Name = "tbSifra";
             this.tbSifra.PasswordChar = '*';
             this.tbSifra.Size = new System.Drawing.Size(183, 20);
@@ -111,14 +112,14 @@
             // 
             // tbIme
             // 
-            this.tbIme.Location = new System.Drawing.Point(162, 258);
+            this.tbIme.Location = new System.Drawing.Point(162, 254);
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(183, 20);
             this.tbIme.TabIndex = 7;
             // 
             // tbPrezime
             // 
-            this.tbPrezime.Location = new System.Drawing.Point(162, 324);
+            this.tbPrezime.Location = new System.Drawing.Point(162, 320);
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(183, 20);
             this.tbPrezime.TabIndex = 8;
@@ -156,12 +157,24 @@
             this.btnResetuj.Text = "Resetuj";
             this.btnResetuj.UseVisualStyleBackColor = true;
             // 
+            // cbKorisnik
+            // 
+            this.cbKorisnik.AutoSize = true;
+            this.cbKorisnik.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbKorisnik.Location = new System.Drawing.Point(162, 359);
+            this.cbKorisnik.Name = "cbKorisnik";
+            this.cbKorisnik.Size = new System.Drawing.Size(76, 28);
+            this.cbKorisnik.TabIndex = 12;
+            this.cbKorisnik.Text = "Korisnik";
+            this.cbKorisnik.UseVisualStyleBackColor = true;
+            // 
             // Registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(553, 499);
+            this.Controls.Add(this.cbKorisnik);
             this.Controls.Add(this.btnResetuj);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistracija);
@@ -197,5 +210,6 @@
         private System.Windows.Forms.Button btnRegistracija;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnResetuj;
+        private System.Windows.Forms.CheckBox cbKorisnik;
     }
 }
