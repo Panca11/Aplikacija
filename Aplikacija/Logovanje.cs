@@ -46,63 +46,50 @@ namespace Aplikacija
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
                 cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
-<<<<<<< HEAD
-                //SqlDataAdapter sda = new SqlDataAdapter("select role from tab_Logovanje where Username=" + tbKorisnickoIme.Text + "and password=" + tbSifra.Text, con);
-                con.Open();
-                
-                //DataTable dt = new System.Data.DataTable();
-                //sda.Fill(dt);
-                if (cmd.ExecuteScalar().ToString() == "1")//proverava uzete podatke sa forme 
-                {
-                    /*switch (dt.Rows[0]["Role"] as string)
-                    {
-                        case "Admin":
-                            {
-                                this.Hide();
-                                Form1 ss = new Form1();
-                                ss.Show();
-                                break;
-                            }
-=======
 
                 con.Open();
+
+
                 if (cmd.ExecuteScalar().ToString() == "1")//proverava uzete podatke sa forme 
                 {
                     SqlConnection connection = new SqlConnection();
                     connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
-                    connection.Open();
-                    string query = "SELECT role FROM tab_Logovanje WHERE [role] = 'Admin'";
+                    string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password";
 
+                    DataTable dt = new DataTable();
                     SqlCommand command = new SqlCommand(query, connection);
->>>>>>> 9ca54c1907d055fce8a7f94437142029f1baa493
+                    command.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+                    command.Parameters.AddWithValue("@password", tbSifra.Text);
 
-                    String role = command.ExecuteScalar().ToString();
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dt);
+                        if (dt.Rows.Count > 0)
+                        {
 
-                    if (role == "True")
-                    {
-                        connection.Close();
-                        MessageBox.Show("Uspesan login");
-                        Form1 frm = new Form1();
-                        this.Hide();    
-                        frm.Show();
-                    }
-<<<<<<< HEAD
-                            MessageBox.Show("Uspesan login");*/
-                    Form1 frm = new Form1();
-                    this.Hide();
-                    frm.Show();
-=======
-                    else
-                    {
-                        Form2 frm2 = new Form2();
-                        frm2.Show();
-                        this.Hide();
+                            MessageBox.Show("Uspesan login");
+                            Form1 frm = new Form1();
+                            this.Hide();
+                            frm.ShowDialog();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Uspesan login");
+                            Form2 frm2 = new Form2();
+                            this.Hide();
+                            frm2.ShowDialog();
+                        }
                     }
 
-                    
->>>>>>> 9ca54c1907d055fce8a7f94437142029f1baa493
+
+                    connection.Close();
+
+                  
+
                 }
+
+
                 else
                 {
                     MessageBox.Show("Proverite korisnicko ime i lozinku");
