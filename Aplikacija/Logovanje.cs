@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
 namespace Aplikacija
 {
     public partial class Logovanje : Form
@@ -45,35 +46,36 @@ namespace Aplikacija
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
                 cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
-                SqlDataAdapter sda = new SqlDataAdapter("select role from tab_Logovanje where Username=" + tbKorisnickoIme.Text + "and password=" + tbSifra.Text, con);
+
                 con.Open();
-                
-                DataTable dt = new System.Data.DataTable();
-                sda.Fill(dt);
                 if (cmd.ExecuteScalar().ToString() == "1")//proverava uzete podatke sa forme 
                 {
-                    switch (dt.Rows[0]["Role"] as string)
-                    {
-                        case "Admin":
-                            {
-                                this.Hide();
-                                Form1 ss = new Form1();
-                                ss.Show();
-                                break;
-                            }
+                    SqlConnection connection = new SqlConnection();
+                    connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
-                        case "Korisnik":
-                            {
-                                this.Hide();
-                                Form2 mf = new Form2();
-                                mf.Show();
-                                break;
-                            }
+                    connection.Open();
+                    string query = "SELECT role FROM tab_Logovanje WHERE [role] = 'Admin'";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    String role = command.ExecuteScalar().ToString();
+
+                    if (role == "True")
+                    {
+                        connection.Close();
+                        MessageBox.Show("Uspesan login");
+                        Form1 frm = new Form1();
+                        this.Hide();    
+                        frm.Show();
                     }
-                            MessageBox.Show("Uspesan login");
-                    Form1 frm = new Form1();
-                    this.Hide();
-                    frm.Show();
+                    else
+                    {
+                        Form2 frm2 = new Form2();
+                        frm2.Show();
+                        this.Hide();
+                    }
+
+                    
                 }
                 else
                 {
