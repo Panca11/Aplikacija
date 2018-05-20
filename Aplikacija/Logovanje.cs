@@ -22,39 +22,44 @@ namespace Aplikacija
         {
             Application.Exit();
         }
-        string conn = ("Data Source=localhost;Initial Catalog=EDU;Integrated Security=True");
+           
         private void btnLogovanje_Click(object sender, EventArgs e)
         {
-            try
+            if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbSifra.Text))
             {
-                if(tbKorisnickoIme.Text=="" || tbSifra.Text=="")
-                {
-                    MessageBox.Show("Morate popuniti sva polja.");
-                }
-                else
-                {
-                    SqlConnection con = new SqlConnection(conn);
-                    SqlCommand cmd = new SqlCommand("select * from tab_Logovanje where Username=@usr and password=@pass", con);
-                    cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
-                    cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
+                MessageBox.Show("Morate popuniti polja za login");
+            }
+            else
+            {
+                SqlConnection con = new SqlConnection();
+                con.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
-                    con.Open();
-                    SqlDataAdapter sda = new SqlDataAdapter(cmd);
-                    DataSet ds = new DataSet();
-                    sda.Fill(ds);
+
+
+                SqlCommand cmd = new SqlCommand("select count (*) as cnt from tab_Logovanje where Username=@usr and password=@pass", con);
+                cmd.Parameters.Clear();
+                cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+                cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
+
+                con.Open();
+                if (cmd.ExecuteScalar().ToString() == "1")
+                {
+
+                    MessageBox.Show("Uspesan login");
                     Form1 frm = new Form1();
                     this.Hide();
                     frm.Show();
-                    con.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Proverite korisnicko ime i lozinku");
+                    tbKorisnickoIme.Clear();
+                    tbSifra.Clear();
                 }
             }
 
 
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
-            }
+            
         }
     }
 }
