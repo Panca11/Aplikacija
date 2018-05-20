@@ -25,7 +25,7 @@ namespace Aplikacija
            
         private void btnLogovanje_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbSifra.Text))
+            if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbSifra.Text))//proverava da li su sva polja popunjena
             {
                 MessageBox.Show("Morate popuniti polja za login");
             }
@@ -38,11 +38,11 @@ namespace Aplikacija
 
                 SqlCommand cmd = new SqlCommand("select count (*) as cnt from tab_Logovanje where Username=@usr and password=@pass", con);
                 cmd.Parameters.Clear();
-                cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+                cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
                 cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
 
                 con.Open();
-                if (cmd.ExecuteScalar().ToString() == "1")
+                if (cmd.ExecuteScalar().ToString() == "1")//proverava uzete podatke sa forme 
                 {
 
                     MessageBox.Show("Uspesan login");

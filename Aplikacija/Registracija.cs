@@ -24,75 +24,108 @@ namespace Aplikacija
         {
             Application.Exit();           
         }
+        private int numberPass(string pass)//provra da li ima broja
+        {
+            int num = 0;
+            foreach (char ch in pass)
+            {
+                num++;
+            }
+            return num;
+        }
+        private int upperCase(string pass)//provera da l ima velikih slova
+        {
+            int num = 0;
+            foreach (char ch in pass)
+            {
+                if(char.IsUpper(ch))
+                {
+                    num++;
+                }
+            }
+            return num;
+        }
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-            try
-            {
-                if (tbKorisnickoIme.Text == "" || tbSifra.Text == "" || tbIme.Text == "" || tbPrezime.Text == "")
+            const int MIN_LENGHT = 10;//sifra mora imati minimum 10 karaktera
+                string username = tbKorisnickoIme.Text;
+                string pass = tbSifra.Text;
+                if(pass.Length>=MIN_LENGHT && numberPass(pass)>=1 && upperCase(pass)>=1)//provera unesene sifre
                 {
-                    MessageBox.Show("Morate popuniti sva polja.");
-                }
-                else
+                try
                 {
-                    SqlConnection konekcija = new SqlConnection(conn);
-                    StringBuilder sb = new StringBuilder();
-
-                    sb.Append("INSERT INTO tab_Logovanje");
-                    sb.Append("(Username, password, Aktivnost, name, lastname)");
-                    sb.Append("VALUES (@username, @password, @aktivnost, @name, @lastname) ");
-
-                    SqlCommand komanda = new SqlCommand(sb.ToString(), konekcija);
-
-                    SqlParameter usernameParam = new SqlParameter("@Username", SqlDbType.VarChar, 50);
-                    SqlParameter passwordParam = new SqlParameter("@password", SqlDbType.VarChar, 50);
-                    SqlParameter aktivnostParam = new SqlParameter("@Aktivnost", SqlDbType.Int);
-                    SqlParameter nameParam = new SqlParameter("@name", SqlDbType.VarChar, 50);
-                    SqlParameter lastnameParam = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
-                    SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
-                                        
-
-                    // uzima unete podatke iz TextBox i smesta u parametre
-                    komanda.Parameters.Add(usernameParam);
-                    komanda.Parameters.Add(passwordParam);
-                    komanda.Parameters.Add(aktivnostParam);
-                    komanda.Parameters.Add(nameParam);
-                    komanda.Parameters.Add(lastnameParam);
-
-                    usernameParam.Value = tbKorisnickoIme.Text;
-                    passwordParam.Value = tbSifra.Text;
-                    aktivnostParam.Value = "1";//Postavlja se Aktivnost na 1(true)
-                    nameParam.Value = tbIme.Text;
-                    lastnameParam.Value = tbPrezime.Text;
-
-                    try
+                    if (tbKorisnickoIme.Text == "" || tbSifra.Text == "" || tbIme.Text == "" || tbPrezime.Text == "")
                     {
-                        konekcija.Open();
-                        komanda.ExecuteNonQuery();
-                        konekcija.Close();
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        return;
+                        MessageBox.Show("Morate popuniti sva polja.");
                     }
 
-                    MessageBox.Show("Uspesno ste se registovali.");
+                    else
+                    {
+                        SqlConnection konekcija = new SqlConnection(conn);
+                        StringBuilder sb = new StringBuilder();
 
-                    this.Close();
-                    Logovanje log = new Logovanje();
-                    log.Show();
+                        sb.Append("INSERT INTO tab_Logovanje");
+                        sb.Append("(Username, password, Aktivnost, name, lastname)");
+                        sb.Append("VALUES (@username, @password, @aktivnost, @name, @lastname) ");
+
+                        SqlCommand komanda = new SqlCommand(sb.ToString(), konekcija);
+
+                        SqlParameter usernameParam = new SqlParameter("@Username", SqlDbType.VarChar, 50);
+                        SqlParameter passwordParam = new SqlParameter("@password", SqlDbType.VarChar, 50);
+                        SqlParameter aktivnostParam = new SqlParameter("@Aktivnost", SqlDbType.Int);
+                        SqlParameter nameParam = new SqlParameter("@name", SqlDbType.VarChar, 50);
+                        SqlParameter lastnameParam = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
+                        SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
+
+
+                        // uzima unete podatke iz TextBox i smesta u parametre
+                        komanda.Parameters.Add(usernameParam);
+                        komanda.Parameters.Add(passwordParam);
+                        komanda.Parameters.Add(aktivnostParam);
+                        komanda.Parameters.Add(nameParam);
+                        komanda.Parameters.Add(lastnameParam);
+
+                        usernameParam.Value = tbKorisnickoIme.Text;
+                        passwordParam.Value = tbSifra.Text;
+                        aktivnostParam.Value = "1";//Postavlja se Aktivnost na 1(true)
+                        nameParam.Value = tbIme.Text;
+                        lastnameParam.Value = tbPrezime.Text;
+
+                        try
+                        {
+                            konekcija.Open();
+                            komanda.ExecuteNonQuery();
+                            konekcija.Close();
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                            return;
+                        }
+
+                        MessageBox.Show("Uspesno ste se registovali.");
+
+                        this.Close();
+                        Logovanje log = new Logovanje();
+                        log.Show();
+                    }
                 }
+
+
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                    throw;
+                }
+
+
             }
-
-
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-                throw;
-            }
-
-
+            else
+                {
+                    MessageBox.Show("SIfra je neispravna");
+                }
+           
 
                               
         }
