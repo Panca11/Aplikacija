@@ -20,7 +20,12 @@ namespace Aplikacija
 
         private void Exit_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult dr = MessageBox.Show("Da li ste sigurni da zelite da ugasite aplikaciju", "Izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (dr == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
            
         private void btnLogovanje_Click(object sender, EventArgs e)
