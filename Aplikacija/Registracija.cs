@@ -22,13 +22,7 @@ namespace Aplikacija
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-           DialogResult dr =  MessageBox.Show("Da li ste sigurni da zelite da izadjete iz registracije", "Izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (dr == DialogResult.Yes)
-            {
-                this.Close();
-                Form1 frm = new Form1();
-                frm.ShowDialog();
-            }       
+             
         }
         private int numberPass(string pass)//provra da li ima broja
         {
@@ -146,9 +140,18 @@ namespace Aplikacija
 
                               
         }
-            
 
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Da li ste sigurni da zelite da izadjete iz registracije", "Izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (dr == DialogResult.Yes)
+            {
+                this.Close();
+                Form1 frm = new Form1();
+                frm.ShowDialog();
+            }
         }
+    }
         
         
     }

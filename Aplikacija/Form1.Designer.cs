@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.btnRegistracija = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +54,14 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.eDUDataSet1 = new Aplikacija.EDUDataSet1();
+            this.tabObjektiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tab_ObjektiTableAdapter1 = new Aplikacija.EDUDataSet1TableAdapters.tab_ObjektiTableAdapter();
+            this.eDUDataSet2 = new Aplikacija.EDUDataSet2();
+            this.tabKaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tab_KaseTableAdapter1 = new Aplikacija.EDUDataSet2TableAdapters.tab_KaseTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSetBindingSource)).BeginInit();
@@ -62,6 +71,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistracija
@@ -86,7 +100,7 @@
             this.ipadresaDataGridViewTextBoxColumn,
             this.aktivnostDataGridViewCheckBoxColumn,
             this.tipBODataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.tabObjektiBindingSource;
+            this.dataGridView1.DataSource = this.tabObjektiBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(12, 77);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(544, 218);
@@ -159,7 +173,7 @@
             this.brojkaseDataGridViewTextBoxColumn,
             this.ipadresaDataGridViewTextBoxColumn1,
             this.aktivnostDataGridViewCheckBoxColumn1});
-            this.dataGridView2.DataSource = this.tabKaseBindingSource;
+            this.dataGridView2.DataSource = this.tabKaseBindingSource1;
             this.dataGridView2.Location = new System.Drawing.Point(659, 87);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(543, 208);
@@ -203,12 +217,12 @@
             // 
             // pictureBox1
             // 
-          /*  this.pictureBox1.Location = new System.Drawing.Point(1111, 2);
+            this.pictureBox1.Location = new System.Drawing.Point(1111, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 50);
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);*/
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // tab_ObjektiTableAdapter
             // 
@@ -244,12 +258,64 @@
             this.label1.TabIndex = 7;
             this.label1.Text = "Administrator";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(1161, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(41, 41);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // eDUDataSet1
+            // 
+            this.eDUDataSet1.DataSetName = "EDUDataSet1";
+            this.eDUDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabObjektiBindingSource1
+            // 
+            this.tabObjektiBindingSource1.DataMember = "tab_Objekti";
+            this.tabObjektiBindingSource1.DataSource = this.eDUDataSet1;
+            // 
+            // tab_ObjektiTableAdapter1
+            // 
+            this.tab_ObjektiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // eDUDataSet2
+            // 
+            this.eDUDataSet2.DataSetName = "EDUDataSet2";
+            this.eDUDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tabKaseBindingSource1
+            // 
+            this.tabKaseBindingSource1.DataMember = "tab_Kase";
+            this.tabKaseBindingSource1.DataSource = this.eDUDataSet2;
+            // 
+            // tab_KaseTableAdapter1
+            // 
+            this.tab_KaseTableAdapter1.ClearBeforeFill = true;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(256, 559);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(138, 36);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "Pregled korisnika";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(1214, 607);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dataGridView3);
@@ -271,6 +337,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,5 +373,13 @@
         private System.Windows.Forms.DataGridView dataGridView3;
         private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private EDUDataSet1 eDUDataSet1;
+        private System.Windows.Forms.BindingSource tabObjektiBindingSource1;
+        private EDUDataSet1TableAdapters.tab_ObjektiTableAdapter tab_ObjektiTableAdapter1;
+        private EDUDataSet2 eDUDataSet2;
+        private System.Windows.Forms.BindingSource tabKaseBindingSource1;
+        private EDUDataSet2TableAdapters.tab_KaseTableAdapter tab_KaseTableAdapter1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -39,9 +39,9 @@
             this.tbIme = new System.Windows.Forms.TextBox();
             this.tbPrezime = new System.Windows.Forms.TextBox();
             this.btnRegistracija = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnResetuj = new System.Windows.Forms.Button();
             this.cbKorisnik = new System.Windows.Forms.CheckBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -136,17 +136,6 @@
             this.btnRegistracija.UseVisualStyleBackColor = false;
             this.btnRegistracija.Click += new System.EventHandler(this.btnRegistracija_Click);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(502, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(41, 41);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 10;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
             // btnResetuj
             // 
             this.btnResetuj.Font = new System.Drawing.Font("Agency FB", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -168,15 +157,26 @@
             this.cbKorisnik.Text = "Korisnik";
             this.cbKorisnik.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(500, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(41, 41);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 13;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click_1);
+            // 
             // Registracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(553, 499);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbKorisnik);
             this.Controls.Add(this.btnResetuj);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistracija);
             this.Controls.Add(this.tbPrezime);
             this.Controls.Add(this.tbIme);
@@ -208,8 +208,8 @@
         private System.Windows.Forms.TextBox tbIme;
         private System.Windows.Forms.TextBox tbPrezime;
         private System.Windows.Forms.Button btnRegistracija;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnResetuj;
         private System.Windows.Forms.CheckBox cbKorisnik;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

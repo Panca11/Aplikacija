@@ -19,14 +19,21 @@ namespace Aplikacija
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Da li zelite da se izlogujete", "izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+        }
+
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("Da li ste sigurni da zelite da izadjete iz registracije", "Izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (dr == DialogResult.Yes)
             {
-                this.Close();
-                Logovanje l = new Logovanje();
-                l.ShowDialog();
+                
+                Logovanje frm = new Logovanje();
+                this.Hide();
+                frm.ShowDialog();
+                this.Hide();
             }
+
         }
     }
 }

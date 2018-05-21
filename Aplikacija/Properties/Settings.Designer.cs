@@ -32,5 +32,25 @@ namespace Aplikacija.Properties {
                 return ((string)(this["EDUConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-MU6AODF;Initial Catalog=EDU;Integrated Security=True")]
+        public string EDUConnectionString1 {
+            get {
+                return ((string)(this["EDUConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost;Initial Catalog=EDU;Integrated Security=True")]
+        public string EDUConnectionString2 {
+            get {
+                return ((string)(this["EDUConnectionString2"]));
+            }
+        }
     }
 }
