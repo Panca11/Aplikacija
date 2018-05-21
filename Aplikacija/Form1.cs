@@ -24,7 +24,7 @@ namespace Aplikacija
             reg.Show();
         }
 
-     /*   private void pictureBox1_Click(object sender, EventArgs e)
+       private void Exit_Click(object sender, EventArgs e)
         {
             DialogResult dr = MessageBox.Show("Da li zelite da se izlogujete", "izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -35,15 +35,19 @@ namespace Aplikacija
                 l.ShowDialog();
             }
         }
-        */
+        
         private void Form1_Load(object sender, EventArgs e)
-        {
-           /* // TODO: This line of code loads data into the 'eDUDataSet.tab_Kase' table. You can move, or remove it, as needed.
+        {/*
+            // TODO: This line of code loads data into the 'eDUDataSet.tab_Kase' table. You can move, or remove it, as needed.
             this.tab_KaseTableAdapter.Fill(this.eDUDataSet.tab_Kase);
             // TODO: This line of code loads data into the 'eDUDataSet.tab_Objekti' table. You can move, or remove it, as needed.
-            this.tab_ObjektiTableAdapter.Fill(this.eDUDataSet.tab_Objekti);*/
-
+            this.tab_ObjektiTableAdapter.Fill(this.eDUDataSet.tab_Objekti);
+            */
         }
-        
+
+       /* private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }*/
     }
 }
