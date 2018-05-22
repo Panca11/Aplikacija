@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PKorisnika));
             this.label2 = new System.Windows.Forms.Label();
             this.tabLogovanjeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tab_LogovanjeTableAdapter = new Aplikacija.EDUDataSet3TableAdapters.tab_LogovanjeTableAdapter();
             this.Exit = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,7 +64,6 @@
             // 
             // tab_LogovanjeTableAdapter
             // 
-            this.tab_LogovanjeTableAdapter.ClearBeforeFill = true;
             // 
             // Exit
             // 
@@ -195,7 +193,6 @@
 
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource tabLogovanjeBindingSource;
-        private EDUDataSet3TableAdapters.tab_LogovanjeTableAdapter tab_LogovanjeTableAdapter;
         private System.Windows.Forms.PictureBox Exit;
         private System.Windows.Forms.DataGridView dataGridView1;
         private EDUDataSet6 eDUDataSet6;

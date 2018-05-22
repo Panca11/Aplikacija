@@ -37,15 +37,8 @@
             this.tabKaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabKaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.tab_ObjektiTableAdapter = new Aplikacija.EDUDataSetTableAdapters.tab_ObjektiTableAdapter();
-            this.tab_KaseTableAdapter = new Aplikacija.EDUDataSetTableAdapters.tab_KaseTableAdapter();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.tab_ObjektiTableAdapter1 = new Aplikacija.EDUDataSet1TableAdapters.tab_ObjektiTableAdapter();
-            this.tab_KaseTableAdapter1 = new Aplikacija.EDUDataSet2TableAdapters.tab_KaseTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sifobjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,14 +57,13 @@
             this.tabObjektiBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.eDUDataSet5 = new Aplikacija.EDUDataSet5();
             this.tab_ObjektiTableAdapter2 = new Aplikacija.EDUDataSet5TableAdapters.tab_ObjektiTableAdapter();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource2)).BeginInit();
@@ -85,7 +77,7 @@
             // 
             this.btnRegistracija.BackColor = System.Drawing.Color.LightGray;
             this.btnRegistracija.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegistracija.Location = new System.Drawing.Point(13, 559);
+            this.btnRegistracija.Location = new System.Drawing.Point(26, 447);
             this.btnRegistracija.Name = "btnRegistracija";
             this.btnRegistracija.Size = new System.Drawing.Size(99, 36);
             this.btnRegistracija.TabIndex = 0;
@@ -110,30 +102,6 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
-            // tab_ObjektiTableAdapter
-            // 
-            this.tab_ObjektiTableAdapter.ClearBeforeFill = true;
-            // 
-            // tab_KaseTableAdapter
-            // 
-            this.tab_KaseTableAdapter.ClearBeforeFill = true;
-            // 
-            // dataGridView3
-            // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(26, 311);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(530, 194);
-            this.dataGridView3.TabIndex = 5;
-            // 
-            // dataGridView4
-            // 
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(659, 311);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(543, 194);
-            this.dataGridView4.TabIndex = 6;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -154,25 +122,6 @@
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // tab_ObjektiTableAdapter1
-            // 
-            this.tab_ObjektiTableAdapter1.ClearBeforeFill = true;
-            // 
-            // tab_KaseTableAdapter1
-            // 
-            this.tab_KaseTableAdapter1.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(139, 559);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 36);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Pregled korisnika";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // dataGridView1
             // 
@@ -296,19 +245,28 @@
             // 
             this.tab_ObjektiTableAdapter2.ClearBeforeFill = true;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(151, 448);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(136, 35);
+            this.button1.TabIndex = 15;
+            this.button1.Text = "Pregled Korisnika";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.ClientSize = new System.Drawing.Size(1214, 607);
+            this.ClientSize = new System.Drawing.Size(1214, 504);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView4);
-            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnRegistracija);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -322,8 +280,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource2)).EndInit();
@@ -341,19 +297,12 @@
         private System.Windows.Forms.Button btnRegistracija;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource eDUDataSetBindingSource;
-        private System.Windows.Forms.BindingSource tabObjektiBindingSource;
-        private EDUDataSetTableAdapters.tab_ObjektiTableAdapter tab_ObjektiTableAdapter;
+        private System.Windows.Forms.BindingSource tabObjektiBindingSource;        
         private System.Windows.Forms.BindingSource tabKaseBindingSource;
-        private EDUDataSetTableAdapters.tab_KaseTableAdapter tab_KaseTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.BindingSource tabObjektiBindingSource1;
-        private EDUDataSet1TableAdapters.tab_ObjektiTableAdapter tab_ObjektiTableAdapter1;
         private System.Windows.Forms.BindingSource tabKaseBindingSource1;
-        private EDUDataSet2TableAdapters.tab_KaseTableAdapter tab_KaseTableAdapter1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private EDUDataSet4 eDUDataSet4;
         private System.Windows.Forms.BindingSource tabKaseBindingSource2;
@@ -372,5 +321,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ipadresaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn aktivnostDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipBODataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button button1;
     }
 }

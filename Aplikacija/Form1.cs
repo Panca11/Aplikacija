@@ -36,14 +36,6 @@ namespace Aplikacija
             // TODO: This line of code loads data into the 'eDUDataSet4.tab_Kase' table. You can move, or remove it, as needed.
             this.tab_KaseTableAdapter2.Fill(this.eDUDataSet4.tab_Kase);
             // TODO: This line of code loads data into the 'eDUDataSet2.tab_Kase' table. You can move, or remove it, as needed.
-            //this.tab_KaseTableAdapter1.Fill(this.eDUDataSet2.tab_Kase);
-            // TODO: This line of code loads data into the 'eDUDataSet1.tab_Objekti' table. You can move, or remove it, as needed.
-            //this.tab_ObjektiTableAdapter1.Fill(this.eDUDataSet1.tab_Objekti);
-            // TODO: This line of code loads data into the 'eDUDataSet.tab_Kase' table. You can move, or remove it, as needed.
-            //this.tab_KaseTableAdapter.Fill(this.eDUDataSet.tab_Kase);
-            // TODO: This line of code loads data into the 'eDUDataSet.tab_Objekti' table. You can move, or remove it, as needed.
-            //  this.tab_ObjektiTableAdapter.Fill(this.eDUDataSet.tab_Objekti);
-
         }
 
         private void pictureBox2_Click(object sender, EventArgs e)
