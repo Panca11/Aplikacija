@@ -178,6 +178,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PKorisnika";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PKorisnika";
             this.Load += new System.EventHandler(this.PKorisnika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource)).EndInit();
