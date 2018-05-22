@@ -46,6 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EDUDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDUDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EDUDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDUDataSet1.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EDUDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -117,6 +127,28 @@
     <EmbeddedResource Include="Registracija.resx">
       <DependentUpon>Registracija.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="EDUDataSet.xsc">
+      <DependentUpon>EDUDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDUDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDUDataSet.xss">
+      <DependentUpon>EDUDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet1.xsc">
+      <DependentUpon>EDUDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDUDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDUDataSet1.xss">
+      <DependentUpon>EDUDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="EDUDataSet4.xsc">
       <DependentUpon>EDUDataSet4.xsd</DependentUpon>
     </None>
