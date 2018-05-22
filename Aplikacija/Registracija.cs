@@ -215,6 +215,12 @@ namespace Aplikacija
             if (e.KeyCode == Keys.Enter)
                 cbKorisnik.Focus();
         }
+
+        private void cbKorisnik_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                btnRegistracija.Focus();
+        }
     }
 
 

@@ -160,6 +160,7 @@
             this.cbKorisnik.TabIndex = 12;
             this.cbKorisnik.Text = "Korisnik";
             this.cbKorisnik.UseVisualStyleBackColor = true;
+            this.cbKorisnik.KeyDown += new System.Windows.Forms.KeyEventHandler(this.cbKorisnik_KeyDown);
             // 
             // pictureBox1
             // 

@@ -60,6 +60,7 @@
             this.tbSifra.PasswordChar = '*';
             this.tbSifra.Size = new System.Drawing.Size(138, 20);
             this.tbSifra.TabIndex = 1;
+            this.tbSifra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSifra_KeyDown);
             // 
             // label1
             // 
