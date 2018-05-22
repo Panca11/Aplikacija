@@ -56,7 +56,15 @@ namespace Aplikacija
                     SqlConnection connection = new SqlConnection();
                     connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
-                    string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password";
+                    string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password " ;
+                    string query2 = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=False";
+                    string query3 = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=False";
+                //    if (string query1 = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password ")
+                if(query2==query3)
+                    {
+                        MessageBox.Show("Nemate pristum serveru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
 
                     DataTable dt = new DataTable();
                     SqlCommand command = new SqlCommand(query, connection);
