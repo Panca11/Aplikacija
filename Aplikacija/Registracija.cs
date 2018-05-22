@@ -48,26 +48,51 @@ namespace Aplikacija
 
         private void btnRegistracija_Click(object sender, EventArgs e)
         {
-            const int MIN_LENGHT = 10;//sifra mora imati minimum 10 karaktera
+            SqlConnection konekcija = new SqlConnection(conn);
+            StringBuilder sb = new StringBuilder();
+            StringBuilder sb1 = new StringBuilder();
+
+
+            sb1.Append("select id from tab_Logovanje where Username=@usr ");
+
+
+            SqlCommand komanda1 = new SqlCommand(sb1.ToString(),konekcija);
+            komanda1.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+            konekcija.Open();
+            var rez = komanda1.ExecuteScalar();
+            if (rez != null)
+            {
+                MessageBox.Show("Korisnicko ime vec postoji");
+                res();
+                return;
+
+            }
+
+            konekcija.Close();
+                const int MIN_LENGHT = 5;//sifra mora imati minimum 10 karaktera
                 string username = tbKorisnickoIme.Text;
                 string pass = tbSifra.Text;
-                if(pass.Length>=MIN_LENGHT && numberPass(pass)>=1 && upperCase(pass)>=1)//provera unesene sifre
+                if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbIme.Text) || string.IsNullOrEmpty(tbPrezime.Text) || string.IsNullOrEmpty(tbSifra.Text))//provera unesene sifre
+                {
+                    MessageBox.Show("Morate popuniti sva polja");
+
+                }
+                else
                 {
                 try
                 {
-                    if (tbKorisnickoIme.Text == "" || tbSifra.Text == "" || tbIme.Text == "" || tbPrezime.Text == "")
+                    if (pass.Length >= MIN_LENGHT && numberPass(pass) >= 1 && upperCase(pass) >= 1)
                     {
-                        MessageBox.Show("Morate popuniti sva polja.");
+                        MessageBox.Show("Sifra je neispravna.");
                     }
 
                     else
                     {
-                        SqlConnection konekcija = new SqlConnection(conn);
-                        StringBuilder sb = new StringBuilder();
+
 
                         sb.Append("INSERT INTO tab_Logovanje");
-                        sb.Append("(Username, password, Aktivnost, name, lastname, role)");
-                        sb.Append("VALUES (@username, @password, @aktivnost, @name, @lastname, @role) ");
+                        sb.Append("(Username, password, Aktivnost, name, lastname, Admin)");
+                        sb.Append("VALUES (@username, @password, @aktivnost, @name, @lastname, @Admin) ");
 
                         SqlCommand komanda = new SqlCommand(sb.ToString(), konekcija);
 
@@ -77,7 +102,7 @@ namespace Aplikacija
                         SqlParameter nameParam = new SqlParameter("@name", SqlDbType.VarChar, 50);
                         SqlParameter lastnameParam = new SqlParameter("@lastname", SqlDbType.VarChar, 50);
                         SqlParameter idParam = new SqlParameter("@id", SqlDbType.Int);
-                        SqlParameter korisnikParam = new SqlParameter("@role", SqlDbType.VarChar, 50);
+                        SqlParameter korisnikParam = new SqlParameter("@Admin", SqlDbType.VarChar, 50);
 
 
                         // uzima unete podatke iz TextBox i smesta u parametre
@@ -95,13 +120,13 @@ namespace Aplikacija
                         lastnameParam.Value = tbPrezime.Text;
                         if (cbKorisnik.Checked)
                         {
-                            korisnikParam.Value = "Korisnik";//Postavlja se da ima ulogu korisnika
+                            korisnikParam.Value = 0;//Postavlja se da ima ulogu korisnika
                         }
                         else
                         {
-                            korisnikParam.Value = "Admin"; //Postavlja se da ima ulogu admina
+                            korisnikParam.Value = 1; //Postavlja se da ima ulogu admina
                         }
-                        
+
 
                         try
                         {
@@ -121,6 +146,7 @@ namespace Aplikacija
                         Logovanje log = new Logovanje();
                         log.Show();
                     }
+
                 }
 
 
@@ -130,15 +156,10 @@ namespace Aplikacija
                     throw;
                 }
 
-
             }
-            else
-                {
-                    MessageBox.Show("SIfra je neispravna");
-                }
-           
 
-                              
+
+
         }
 
         private void pictureBox1_Click_1(object sender, EventArgs e)
@@ -150,6 +171,19 @@ namespace Aplikacija
                 Form1 frm = new Form1();
                 frm.ShowDialog();
             }
+        }
+        private void res()
+        {
+            tbIme.Clear();
+            tbKorisnickoIme.Clear();
+            tbPrezime.Clear(); tbIme.Clear();
+            cbKorisnik.Checked = false;
+            tbSifra.Clear();
+        }
+        private void btnResetuj_Click(object sender, EventArgs e)
+        {
+
+            res();
         }
     }
         
