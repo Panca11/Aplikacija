@@ -62,7 +62,7 @@ namespace Aplikacija
                 //    if (string query1 = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password ")
                 if(query2==query3)
                     {
-                        MessageBox.Show("Nemate pristum serveru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        MessageBox.Show("Nemate pristup serveru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         return;
                     }
 
