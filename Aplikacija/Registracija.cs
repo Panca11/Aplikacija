@@ -24,7 +24,7 @@ namespace Aplikacija
         {
              
         }
-        private int numberPass(string pass)//provra da li ima broja
+        private int numberPass(string pass)     //provera da li ima broja
         {
             int num = 0;
             foreach (char ch in pass)
@@ -33,7 +33,7 @@ namespace Aplikacija
             }
             return num;
         }
-        private int upperCase(string pass)//provera da l ima velikih slova
+        private int upperCase(string pass)      //provera da li ima velikih slova
         {
             int num = 0;
             foreach (char ch in pass)

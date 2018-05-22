@@ -31,10 +31,14 @@ namespace Aplikacija
         
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'eDUDataSet5.tab_Objekti' table. You can move, or remove it, as needed.
+            this.tab_ObjektiTableAdapter2.Fill(this.eDUDataSet5.tab_Objekti);
+            // TODO: This line of code loads data into the 'eDUDataSet4.tab_Kase' table. You can move, or remove it, as needed.
+            this.tab_KaseTableAdapter2.Fill(this.eDUDataSet4.tab_Kase);
             // TODO: This line of code loads data into the 'eDUDataSet2.tab_Kase' table. You can move, or remove it, as needed.
-            this.tab_KaseTableAdapter1.Fill(this.eDUDataSet2.tab_Kase);
+            //this.tab_KaseTableAdapter1.Fill(this.eDUDataSet2.tab_Kase);
             // TODO: This line of code loads data into the 'eDUDataSet1.tab_Objekti' table. You can move, or remove it, as needed.
-            this.tab_ObjektiTableAdapter1.Fill(this.eDUDataSet1.tab_Objekti);
+            //this.tab_ObjektiTableAdapter1.Fill(this.eDUDataSet1.tab_Objekti);
             // TODO: This line of code loads data into the 'eDUDataSet.tab_Kase' table. You can move, or remove it, as needed.
             //this.tab_KaseTableAdapter.Fill(this.eDUDataSet.tab_Kase);
             // TODO: This line of code loads data into the 'eDUDataSet.tab_Objekti' table. You can move, or remove it, as needed.

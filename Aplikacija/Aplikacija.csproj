@@ -66,6 +66,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EDUDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EDUDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDUDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EDUDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDUDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EDUDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDUDataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -165,6 +180,39 @@
     </None>
     <None Include="EDUDataSet3.xss">
       <DependentUpon>EDUDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet4.xsc">
+      <DependentUpon>EDUDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDUDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDUDataSet4.xss">
+      <DependentUpon>EDUDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet5.xsc">
+      <DependentUpon>EDUDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDUDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDUDataSet5.xss">
+      <DependentUpon>EDUDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet6.xsc">
+      <DependentUpon>EDUDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDUDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDUDataSet6.xss">
+      <DependentUpon>EDUDataSet6.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

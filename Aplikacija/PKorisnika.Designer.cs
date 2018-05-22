@@ -31,21 +31,26 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PKorisnika));
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.eDUDataSet3 = new Aplikacija.EDUDataSet3();
             this.tabLogovanjeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tab_LogovanjeTableAdapter = new Aplikacija.EDUDataSet3TableAdapters.tab_LogovanjeTableAdapter();
+            this.Exit = new System.Windows.Forms.PictureBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.eDUDataSet6 = new Aplikacija.EDUDataSet6();
+            this.tabLogovanjeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.tab_LogovanjeTableAdapter1 = new Aplikacija.EDUDataSet6TableAdapters.tab_LogovanjeTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aktivnostDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Exit = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet3)).BeginInit();
+            this.btnOdobri = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -58,36 +63,59 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Pregled korisnika";
             // 
+            // tab_LogovanjeTableAdapter
+            // 
+            this.tab_LogovanjeTableAdapter.ClearBeforeFill = true;
+            // 
+            // Exit
+            // 
+            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
+            this.Exit.Location = new System.Drawing.Point(658, 12);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(41, 41);
+            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Exit.TabIndex = 6;
+            this.Exit.TabStop = false;
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn,
             this.passwordDataGridViewTextBoxColumn,
             this.aktivnostDataGridViewCheckBoxColumn,
             this.nameDataGridViewTextBoxColumn,
             this.lastnameDataGridViewTextBoxColumn,
             this.adminDataGridViewCheckBoxColumn});
-            this.dataGridView1.DataSource = this.tabLogovanjeBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(22, 103);
+            this.dataGridView1.DataSource = this.tabLogovanjeBindingSource1;
+            this.dataGridView1.Location = new System.Drawing.Point(32, 114);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(644, 259);
-            this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.Size = new System.Drawing.Size(757, 265);
+            this.dataGridView1.TabIndex = 7;
             // 
-            // eDUDataSet3
+            // eDUDataSet6
             // 
-            this.eDUDataSet3.DataSetName = "EDUDataSet3";
-            this.eDUDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.eDUDataSet6.DataSetName = "EDUDataSet6";
+            this.eDUDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // tabLogovanjeBindingSource
+            // tabLogovanjeBindingSource1
             // 
-            this.tabLogovanjeBindingSource.DataMember = "tab_Logovanje";
-            this.tabLogovanjeBindingSource.DataSource = this.eDUDataSet3;
+            this.tabLogovanjeBindingSource1.DataMember = "tab_Logovanje";
+            this.tabLogovanjeBindingSource1.DataSource = this.eDUDataSet6;
             // 
-            // tab_LogovanjeTableAdapter
+            // tab_LogovanjeTableAdapter1
             // 
-            this.tab_LogovanjeTableAdapter.ClearBeforeFill = true;
+            this.tab_LogovanjeTableAdapter1.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // usernameDataGridViewTextBoxColumn
             // 
@@ -125,36 +153,37 @@
             this.adminDataGridViewCheckBoxColumn.HeaderText = "Admin";
             this.adminDataGridViewCheckBoxColumn.Name = "adminDataGridViewCheckBoxColumn";
             // 
-            // Exit
+            // btnOdobri
             // 
-            this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(658, 12);
-            this.Exit.Name = "Exit";
-            this.Exit.Size = new System.Drawing.Size(41, 41);
-            this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.Exit.TabIndex = 6;
-            this.Exit.TabStop = false;
-            this.Exit.Click += new System.EventHandler(this.Exit_Click);
+            this.btnOdobri.Location = new System.Drawing.Point(438, 405);
+            this.btnOdobri.Name = "btnOdobri";
+            this.btnOdobri.Size = new System.Drawing.Size(75, 23);
+            this.btnOdobri.TabIndex = 8;
+            this.btnOdobri.Text = "Odobri";
+            this.btnOdobri.UseVisualStyleBackColor = true;
+            this.btnOdobri.Click += new System.EventHandler(this.btnOdobri_Click);
             // 
             // PKorisnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.ClientSize = new System.Drawing.Size(711, 410);
+            this.ClientSize = new System.Drawing.Size(901, 513);
             this.ControlBox = false;
-            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.btnOdobri);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Exit);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PKorisnika";
             this.ShowIcon = false;
             this.Text = "PKorisnika";
             this.Load += new System.EventHandler(this.PKorisnika_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -163,16 +192,20 @@
         #endregion
 
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private EDUDataSet3 eDUDataSet3;
         private System.Windows.Forms.BindingSource tabLogovanjeBindingSource;
         private EDUDataSet3TableAdapters.tab_LogovanjeTableAdapter tab_LogovanjeTableAdapter;
+        private System.Windows.Forms.PictureBox Exit;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private EDUDataSet6 eDUDataSet6;
+        private System.Windows.Forms.BindingSource tabLogovanjeBindingSource1;
+        private EDUDataSet6TableAdapters.tab_LogovanjeTableAdapter tab_LogovanjeTableAdapter1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn aktivnostDataGridViewCheckBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastnameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn adminDataGridViewCheckBoxColumn;
-        private System.Windows.Forms.PictureBox Exit;
+        private System.Windows.Forms.Button btnOdobri;
     }
 }

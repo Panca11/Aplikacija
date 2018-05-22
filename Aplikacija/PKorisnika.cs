@@ -19,8 +19,10 @@ namespace Aplikacija
 
         private void PKorisnika_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'eDUDataSet6.tab_Logovanje' table. You can move, or remove it, as needed.
+            this.tab_LogovanjeTableAdapter1.Fill(this.eDUDataSet6.tab_Logovanje);
             // TODO: This line of code loads data into the 'eDUDataSet3.tab_Logovanje' table. You can move, or remove it, as needed.
-            this.tab_LogovanjeTableAdapter.Fill(this.eDUDataSet3.tab_Logovanje);
+            //this.tab_LogovanjeTableAdapter.Fill(this.eDUDataSet3.tab_Logovanje);
 
         }
 
@@ -36,6 +38,26 @@ namespace Aplikacija
                     
             }
 
+        }
+
+        private void btnOdobri_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Da li zelite da sacuvate promene?", "Potvrda", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                try
+                {                    
+                    this.tab_LogovanjeTableAdapter1.Update(eDUDataSet6.tab_Logovanje);
+                    MessageBox.Show("Uspesno unete izmene.");                    
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Greska: " + ex.Message);
+                }
+            }
+            else
+            {                
+                this.tab_LogovanjeTableAdapter1.Fill(this.eDUDataSet6.tab_Logovanje);
+            }
         }
     }
 }
