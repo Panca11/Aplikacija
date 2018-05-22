@@ -34,7 +34,6 @@
             this.tabObjektiBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabObjektiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eDUDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btnBrisi = new System.Windows.Forms.Button();
             this.tabKaseBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tabKaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -98,17 +97,6 @@
             // 
             this.tabObjektiBindingSource.DataSource = this.eDUDataSetBindingSource;
             // 
-            // btnBrisi
-            // 
-            this.btnBrisi.BackColor = System.Drawing.Color.LightGray;
-            this.btnBrisi.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBrisi.Location = new System.Drawing.Point(133, 559);
-            this.btnBrisi.Name = "btnBrisi";
-            this.btnBrisi.Size = new System.Drawing.Size(99, 36);
-            this.btnBrisi.TabIndex = 2;
-            this.btnBrisi.Text = "Brisanje";
-            this.btnBrisi.UseVisualStyleBackColor = false;
-            // 
             // tabKaseBindingSource
             // 
             this.tabKaseBindingSource.DataSource = this.eDUDataSetBindingSource;
@@ -133,9 +121,9 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(13, 311);
+            this.dataGridView3.Location = new System.Drawing.Point(26, 311);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(543, 194);
+            this.dataGridView3.Size = new System.Drawing.Size(530, 194);
             this.dataGridView3.TabIndex = 5;
             // 
             // dataGridView4
@@ -178,7 +166,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Agency FB", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(256, 559);
+            this.button1.Location = new System.Drawing.Point(139, 559);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 36);
             this.button1.TabIndex = 12;
@@ -258,9 +246,9 @@
             this.aktivnostDataGridViewCheckBoxColumn1,
             this.tipBODataGridViewTextBoxColumn});
             this.dataGridView2.DataSource = this.tabObjektiBindingSource2;
-            this.dataGridView2.Location = new System.Drawing.Point(626, 80);
+            this.dataGridView2.Location = new System.Drawing.Point(662, 80);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(550, 213);
+            this.dataGridView2.Size = new System.Drawing.Size(540, 225);
             this.dataGridView2.TabIndex = 14;
             // 
             // idDataGridViewTextBoxColumn1
@@ -322,7 +310,6 @@
             this.Controls.Add(this.dataGridView4);
             this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.btnBrisi);
             this.Controls.Add(this.btnRegistracija);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
@@ -352,7 +339,6 @@
         #endregion
 
         private System.Windows.Forms.Button btnRegistracija;
-        private System.Windows.Forms.Button btnBrisi;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.BindingSource eDUDataSetBindingSource;
         private System.Windows.Forms.BindingSource tabObjektiBindingSource;
