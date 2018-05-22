@@ -63,7 +63,7 @@ namespace Aplikacija
             var rez = komanda1.ExecuteScalar();
             if (rez != null)
             {
-                MessageBox.Show("Korisnicko ime vec postoji");
+                MessageBox.Show("Korisnicko ime vec postoji","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 res();
                 return;
 
@@ -72,7 +72,7 @@ namespace Aplikacija
             konekcija.Close();
             if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbIme.Text) || string.IsNullOrEmpty(tbPrezime.Text) || string.IsNullOrEmpty(tbSifra.Text))//provera unesene sifre
             {
-                MessageBox.Show("Morate ispuniti sva polja na formi");
+                MessageBox.Show("Morate ispuniti sva polja na formi","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
                 return;
 
             }
@@ -138,7 +138,7 @@ namespace Aplikacija
                         return;
                     }
 
-                    MessageBox.Show("Uspesno ste se registovali.");
+                    MessageBox.Show("Uspesno ste se registovali.","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
                     this.Close();
                     Logovanje log = new Logovanje();
@@ -161,7 +161,7 @@ namespace Aplikacija
 
             else
             {
-                MessageBox.Show("Sifra mora sadrzati minimum 8 karaktera jedno veliko slovo i broj");
+                MessageBox.Show("Sifra mora sadrzati minimum 8 karaktera jedno veliko slovo i broj","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
             }
 
 
