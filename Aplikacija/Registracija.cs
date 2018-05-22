@@ -22,9 +22,9 @@ namespace Aplikacija
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-             
+
         }
-        private int numberPass(string pass)     //provera da li ima broja
+        private int numberPass(string pass)//provra da li ima broja
         {
             int num = 0;
             foreach (char ch in pass)
@@ -33,12 +33,12 @@ namespace Aplikacija
             }
             return num;
         }
-        private int upperCase(string pass)      //provera da li ima velikih slova
+        private int upperCase(string pass)//provera da l ima velikih slova
         {
             int num = 0;
             foreach (char ch in pass)
             {
-                if(char.IsUpper(ch))
+                if (char.IsUpper(ch))
                 {
                     num++;
                 }
@@ -56,7 +56,7 @@ namespace Aplikacija
             sb1.Append("select id from tab_Logovanje where Username=@usr ");
 
 
-            SqlCommand komanda1 = new SqlCommand(sb1.ToString(),konekcija);
+            SqlCommand komanda1 = new SqlCommand(sb1.ToString(), konekcija);
             komanda1.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
             konekcija.Open();
             var rez = komanda1.ExecuteScalar();
@@ -69,9 +69,11 @@ namespace Aplikacija
             }
 
             konekcija.Close();
-                const int MIN_LENGHT = 5;//sifra mora imati minimum 10 karaktera
-                string username = tbKorisnickoIme.Text;
-                string pass = tbSifra.Text;
+
+            string pass = tbSifra.Text;
+            if (pass.Length > 8 && pass.Any(char.IsUpper) &&
+                pass.Any(char.IsNumber))
+            {
                 if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbIme.Text) || string.IsNullOrEmpty(tbPrezime.Text) || string.IsNullOrEmpty(tbSifra.Text))//provera unesene sifre
                 {
                     MessageBox.Show("Morate popuniti sva polja");
@@ -79,15 +81,9 @@ namespace Aplikacija
                 }
                 else
                 {
-                try
-                {
-                    if (pass.Length >= MIN_LENGHT && numberPass(pass) >= 1 && upperCase(pass) >= 1)
+                    try
                     {
-                        MessageBox.Show("Sifra je neispravna.");
-                    }
 
-                    else
-                    {
 
 
                         sb.Append("INSERT INTO tab_Logovanje");
@@ -145,17 +141,25 @@ namespace Aplikacija
                         this.Close();
                         Logovanje log = new Logovanje();
                         log.Show();
+
+
+
+
                     }
 
+
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                        throw;
+                    }
                 }
+            }
 
 
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                    throw;
-                }
-
+            else
+            {
+                MessageBox.Show("Sifra je neispravna.");
             }
 
 
@@ -186,6 +190,6 @@ namespace Aplikacija
             res();
         }
     }
-        
-        
-    }
+
+
+}
