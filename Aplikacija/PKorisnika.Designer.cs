@@ -35,9 +35,6 @@
             this.tab_LogovanjeTableAdapter = new Aplikacija.EDUDataSet3TableAdapters.tab_LogovanjeTableAdapter();
             this.Exit = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.eDUDataSet6 = new Aplikacija.EDUDataSet6();
-            this.tabLogovanjeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tab_LogovanjeTableAdapter1 = new Aplikacija.EDUDataSet6TableAdapters.tab_LogovanjeTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,12 +42,15 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabLogovanjeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.eDUDataSet6 = new Aplikacija.EDUDataSet6();
+            this.tab_LogovanjeTableAdapter1 = new Aplikacija.EDUDataSet6TableAdapters.tab_LogovanjeTableAdapter();
             this.btnOdobri = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -96,20 +96,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(757, 265);
             this.dataGridView1.TabIndex = 7;
             // 
-            // eDUDataSet6
-            // 
-            this.eDUDataSet6.DataSetName = "EDUDataSet6";
-            this.eDUDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabLogovanjeBindingSource1
-            // 
-            this.tabLogovanjeBindingSource1.DataMember = "tab_Logovanje";
-            this.tabLogovanjeBindingSource1.DataSource = this.eDUDataSet6;
-            // 
-            // tab_LogovanjeTableAdapter1
-            // 
-            this.tab_LogovanjeTableAdapter1.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -153,6 +139,20 @@
             this.adminDataGridViewCheckBoxColumn.HeaderText = "Admin";
             this.adminDataGridViewCheckBoxColumn.Name = "adminDataGridViewCheckBoxColumn";
             // 
+            // tabLogovanjeBindingSource1
+            // 
+            this.tabLogovanjeBindingSource1.DataMember = "tab_Logovanje";
+            this.tabLogovanjeBindingSource1.DataSource = this.eDUDataSet6;
+            // 
+            // eDUDataSet6
+            // 
+            this.eDUDataSet6.DataSetName = "EDUDataSet6";
+            this.eDUDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tab_LogovanjeTableAdapter1
+            // 
+            this.tab_LogovanjeTableAdapter1.ClearBeforeFill = true;
+            // 
             // btnOdobri
             // 
             this.btnOdobri.Location = new System.Drawing.Point(438, 405);
@@ -177,13 +177,14 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "PKorisnika";
             this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PKorisnika";
             this.Load += new System.EventHandler(this.PKorisnika_Load);
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
