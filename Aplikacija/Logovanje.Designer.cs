@@ -50,6 +50,7 @@
             this.tbKorisnickoIme.Name = "tbKorisnickoIme";
             this.tbKorisnickoIme.Size = new System.Drawing.Size(138, 20);
             this.tbKorisnickoIme.TabIndex = 0;
+            this.tbKorisnickoIme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKorisnickoIme_KeyDown);
             // 
             // tbSifra
             // 

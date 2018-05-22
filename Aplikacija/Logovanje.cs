@@ -101,5 +101,11 @@ namespace Aplikacija
 
             
         }
+
+        private void tbKorisnickoIme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                tbSifra.Focus();
+        }
     }
 }

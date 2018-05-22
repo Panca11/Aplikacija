@@ -101,6 +101,7 @@
             this.tbKorisnickoIme.Name = "tbKorisnickoIme";
             this.tbKorisnickoIme.Size = new System.Drawing.Size(183, 20);
             this.tbKorisnickoIme.TabIndex = 5;
+            this.tbKorisnickoIme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKorisnickoIme_KeyDown);
             // 
             // tbSifra
             // 
@@ -109,6 +110,7 @@
             this.tbSifra.PasswordChar = '*';
             this.tbSifra.Size = new System.Drawing.Size(183, 20);
             this.tbSifra.TabIndex = 6;
+            this.tbSifra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSifra_KeyDown);
             // 
             // tbIme
             // 
@@ -116,6 +118,7 @@
             this.tbIme.Name = "tbIme";
             this.tbIme.Size = new System.Drawing.Size(183, 20);
             this.tbIme.TabIndex = 7;
+            this.tbIme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbIme_KeyDown);
             // 
             // tbPrezime
             // 
@@ -123,6 +126,7 @@
             this.tbPrezime.Name = "tbPrezime";
             this.tbPrezime.Size = new System.Drawing.Size(183, 20);
             this.tbPrezime.TabIndex = 8;
+            this.tbPrezime.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPrezime_KeyDown);
             // 
             // btnRegistracija
             // 

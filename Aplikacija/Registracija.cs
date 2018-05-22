@@ -192,7 +192,29 @@ namespace Aplikacija
             res();
         }
 
-        
+        private void tbKorisnickoIme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                tbSifra.Focus();
+        }
+
+        private void tbSifra_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                tbIme.Focus();
+        }
+
+        private void tbIme_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                tbPrezime.Focus();
+        }
+
+        private void tbPrezime_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                cbKorisnik.Focus();
+        }
     }
 
 
