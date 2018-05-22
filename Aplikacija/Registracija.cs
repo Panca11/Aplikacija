@@ -63,7 +63,7 @@ namespace Aplikacija
             var rez = komanda1.ExecuteScalar();
             if (rez != null)
             {
-                MessageBox.Show("Korisnicko ime vec postoji");
+                MessageBox.Show("Korisnicko ime vec postoji","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 res();
                 return;
 
