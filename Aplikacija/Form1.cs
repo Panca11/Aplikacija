@@ -40,7 +40,7 @@ namespace Aplikacija
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
-            DialogResult dr = MessageBox.Show("Da li zelite da izadjete", "izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult dr = MessageBox.Show("Da li zelite da se izlogujete", "izlaz", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             if (dr == DialogResult.Yes)
             {
