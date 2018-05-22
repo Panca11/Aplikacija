@@ -16,7 +16,7 @@ namespace Aplikacija
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Logovanje());
+            Application.Run(new PKorisnika());
         }
     }
 }

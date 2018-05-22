@@ -45,8 +45,9 @@ SELECT id, Username, password, Aktivnost, name, lastname, Admin FROM tab_Logovan
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, Username, password, Aktivnost, name, lastname, Admin FROM dbo.tab_Logovanje</CommandText>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT id, Username, password, Aktivnost, name, lastname, Admin FROM dbo.tab_Logovanje
+WHERE Aktivnost=1</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -99,7 +100,7 @@ SELECT id, Username, password, Aktivnost, name, lastname, Admin FROM tab_Logovan
   <xs:element name="EDUDataSet6" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="EDUDataSet6" msprop:Generator_UserDSName="EDUDataSet6">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="tab_Logovanje" msprop:Generator_TableClassName="tab_LogovanjeDataTable" msprop:Generator_TableVarName="tabletab_Logovanje" msprop:Generator_TablePropName="tab_Logovanje" msprop:Generator_RowDeletingName="tab_LogovanjeRowDeleting" msprop:Generator_RowChangingName="tab_LogovanjeRowChanging" msprop:Generator_RowEvHandlerName="tab_LogovanjeRowChangeEventHandler" msprop:Generator_RowDeletedName="tab_LogovanjeRowDeleted" msprop:Generator_UserTableName="tab_Logovanje" msprop:Generator_RowChangedName="tab_LogovanjeRowChanged" msprop:Generator_RowEvArgName="tab_LogovanjeRowChangeEvent" msprop:Generator_RowClassName="tab_LogovanjeRow">
+        <xs:element name="tab_Logovanje" msprop:Generator_TableClassName="tab_LogovanjeDataTable" msprop:Generator_TableVarName="tabletab_Logovanje" msprop:Generator_RowChangedName="tab_LogovanjeRowChanged" msprop:Generator_TablePropName="tab_Logovanje" msprop:Generator_RowDeletingName="tab_LogovanjeRowDeleting" msprop:Generator_RowChangingName="tab_LogovanjeRowChanging" msprop:Generator_RowEvHandlerName="tab_LogovanjeRowChangeEventHandler" msprop:Generator_RowDeletedName="tab_LogovanjeRowDeleted" msprop:Generator_RowClassName="tab_LogovanjeRow" msprop:Generator_UserTableName="tab_Logovanje" msprop:Generator_RowEvArgName="tab_LogovanjeRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

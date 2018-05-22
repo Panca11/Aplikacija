@@ -1052,7 +1052,7 @@ SELECT id, Username, password, Aktivnost, name, lastname, Admin FROM tab_Logovan
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT id, Username, password, Aktivnost, name, lastname, Admin FROM dbo.tab_Logo" +
-                "vanje";
+                "vanje\r\nWHERE Aktivnost=1";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

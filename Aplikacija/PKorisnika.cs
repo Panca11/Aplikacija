@@ -44,15 +44,13 @@ namespace Aplikacija
         {
             if (MessageBox.Show("Da li zelite da sacuvate promene?", "Potvrda", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                if(dataGridView1.Columns[3].ToString()=="False")
-                {
-                    dataGridView1.Rows[0].Visible = false;
-                    return;
-                }
+                
                 try
                 {                    
                     this.tab_LogovanjeTableAdapter1.Update(eDUDataSet6.tab_Logovanje);
-                    MessageBox.Show("Uspesno unete izmene.","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);                    
+                    MessageBox.Show("Uspesno unete izmene.","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                   
+
                 }
                 catch (Exception ex)
                 {
@@ -62,7 +60,11 @@ namespace Aplikacija
             else
             {                
                 this.tab_LogovanjeTableAdapter1.Fill(this.eDUDataSet6.tab_Logovanje);
-            }
+                }
+            PKorisnika pk = new PKorisnika();
+            pk.Show();
+            
+
         }
     }
 }
