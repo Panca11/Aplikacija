@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,12 +29,12 @@ namespace Aplikacija
                 Application.Exit();
             }
         }
-           
+
         private void btnLogovanje_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbSifra.Text))//proverava da li su sva polja popunjena
             {
-                MessageBox.Show("Morate popuniti polja za login");
+                MessageBox.Show("Morate popuniti polja za login.", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
@@ -68,38 +69,35 @@ namespace Aplikacija
                         if (dt.Rows.Count > 0)
                         {
 
-                            MessageBox.Show("Uspesan login");
+                            MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Form1 frm = new Form1();
                             this.Hide();
                             frm.ShowDialog();
                         }
                         else
                         {
-                            MessageBox.Show("Uspesan login");
+                            MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             Form2 frm2 = new Form2();
                             this.Hide();
                             frm2.ShowDialog();
                         }
                     }
 
-
                     connection.Close();
-
-                  
 
                 }
 
-
                 else
+
                 {
-                    MessageBox.Show("Proverite korisnicko ime i lozinku");
+                    MessageBox.Show("Proverite korisnicko ime i lozinku", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbKorisnickoIme.Clear();
                     tbSifra.Clear();
                 }
             }
 
 
-            
+
         }
 
         private void tbKorisnickoIme_KeyDown(object sender, KeyEventArgs e)

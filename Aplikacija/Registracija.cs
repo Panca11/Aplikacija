@@ -53,28 +53,25 @@ namespace Aplikacija
             StringBuilder sb = new StringBuilder();
             StringBuilder sb1 = new StringBuilder();
 
-
             sb1.Append("select id from tab_Logovanje where Username=@usr ");
-
 
             SqlCommand komanda1 = new SqlCommand(sb1.ToString(), konekcija);
             komanda1.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
             konekcija.Open();
             var rez = komanda1.ExecuteScalar();
+
             if (rez != null)
             {
-                MessageBox.Show("Korisnicko ime vec postoji","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                MessageBox.Show("Korisnicko ime vec postoji", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 res();
                 return;
-
             }
 
             konekcija.Close();
             if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbIme.Text) || string.IsNullOrEmpty(tbPrezime.Text) || string.IsNullOrEmpty(tbSifra.Text))//provera unesene sifre
             {
-                MessageBox.Show("Morate ispuniti sva polja na formi","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Morate ispuniti sva polja na formi", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-
             }
 
             string pass = tbSifra.Text;
@@ -82,12 +79,8 @@ namespace Aplikacija
                 pass.Any(char.IsNumber))
             {
 
-
                 try
                 {
-
-
-
                     sb.Append("INSERT INTO tab_Logovanje");
                     sb.Append("(Username, password, Aktivnost, name, lastname, Admin)");
                     sb.Append("VALUES (@username, @password, @aktivnost, @name, @lastname, @Admin) ");
@@ -125,7 +118,6 @@ namespace Aplikacija
                         korisnikParam.Value = 1; //Postavlja se da ima ulogu admina
                     }
 
-
                     try
                     {
                         konekcija.Open();
@@ -138,30 +130,24 @@ namespace Aplikacija
                         return;
                     }
 
-                    MessageBox.Show("Uspesno ste se registovali.","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Uspesno ste se registovali.", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
                     Logovanje log = new Logovanje();
                     log.Show();
-
-
-
-
                 }
-
 
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                     throw;
                 }
-
             }
 
 
             else
             {
-                MessageBox.Show("Sifra mora sadrzati minimum 8 karaktera jedno veliko slovo i broj","Obavestenje",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                MessageBox.Show("Sifra mora sadrzati minimum 8 karaktera jedno veliko slovo i broj", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
 
@@ -188,7 +174,6 @@ namespace Aplikacija
         }
         private void btnResetuj_Click(object sender, EventArgs e)
         {
-
             res();
         }
 
