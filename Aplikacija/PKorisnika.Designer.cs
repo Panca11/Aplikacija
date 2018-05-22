@@ -35,9 +35,6 @@
             this.tab_LogovanjeTableAdapter = new Aplikacija.EDUDataSet3TableAdapters.tab_LogovanjeTableAdapter();
             this.Exit = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.eDUDataSet6 = new Aplikacija.EDUDataSet6();
-            this.tabLogovanjeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.tab_LogovanjeTableAdapter1 = new Aplikacija.EDUDataSet6TableAdapters.tab_LogovanjeTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,19 +42,22 @@
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.adminDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabLogovanjeBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.eDUDataSet6 = new Aplikacija.EDUDataSet6();
+            this.tab_LogovanjeTableAdapter1 = new Aplikacija.EDUDataSet6TableAdapters.tab_LogovanjeTableAdapter();
             this.btnOdobri = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Agency FB", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 32);
+            this.label2.Location = new System.Drawing.Point(279, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(305, 59);
             this.label2.TabIndex = 1;
@@ -70,7 +70,7 @@
             // Exit
             // 
             this.Exit.Image = ((System.Drawing.Image)(resources.GetObject("Exit.Image")));
-            this.Exit.Location = new System.Drawing.Point(658, 12);
+            this.Exit.Location = new System.Drawing.Point(808, 12);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(41, 41);
             this.Exit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -93,22 +93,8 @@
             this.dataGridView1.DataSource = this.tabLogovanjeBindingSource1;
             this.dataGridView1.Location = new System.Drawing.Point(32, 114);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(757, 265);
+            this.dataGridView1.Size = new System.Drawing.Size(744, 265);
             this.dataGridView1.TabIndex = 7;
-            // 
-            // eDUDataSet6
-            // 
-            this.eDUDataSet6.DataSetName = "EDUDataSet6";
-            this.eDUDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabLogovanjeBindingSource1
-            // 
-            this.tabLogovanjeBindingSource1.DataMember = "tab_Logovanje";
-            this.tabLogovanjeBindingSource1.DataSource = this.eDUDataSet6;
-            // 
-            // tab_LogovanjeTableAdapter1
-            // 
-            this.tab_LogovanjeTableAdapter1.ClearBeforeFill = true;
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -153,13 +139,28 @@
             this.adminDataGridViewCheckBoxColumn.HeaderText = "Admin";
             this.adminDataGridViewCheckBoxColumn.Name = "adminDataGridViewCheckBoxColumn";
             // 
+            // tabLogovanjeBindingSource1
+            // 
+            this.tabLogovanjeBindingSource1.DataMember = "tab_Logovanje";
+            this.tabLogovanjeBindingSource1.DataSource = this.eDUDataSet6;
+            // 
+            // eDUDataSet6
+            // 
+            this.eDUDataSet6.DataSetName = "EDUDataSet6";
+            this.eDUDataSet6.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tab_LogovanjeTableAdapter1
+            // 
+            this.tab_LogovanjeTableAdapter1.ClearBeforeFill = true;
+            // 
             // btnOdobri
             // 
-            this.btnOdobri.Location = new System.Drawing.Point(438, 405);
+            this.btnOdobri.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOdobri.Location = new System.Drawing.Point(363, 404);
             this.btnOdobri.Name = "btnOdobri";
-            this.btnOdobri.Size = new System.Drawing.Size(75, 23);
+            this.btnOdobri.Size = new System.Drawing.Size(128, 38);
             this.btnOdobri.TabIndex = 8;
-            this.btnOdobri.Text = "Odobri";
+            this.btnOdobri.Text = "Sacuvaj promene";
             this.btnOdobri.UseVisualStyleBackColor = true;
             this.btnOdobri.Click += new System.EventHandler(this.btnOdobri_Click);
             // 
@@ -168,7 +169,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.ClientSize = new System.Drawing.Size(901, 513);
+            this.ClientSize = new System.Drawing.Size(855, 513);
             this.ControlBox = false;
             this.Controls.Add(this.btnOdobri);
             this.Controls.Add(this.dataGridView1);
@@ -182,8 +183,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Exit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogovanjeBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
