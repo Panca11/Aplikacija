@@ -43,11 +43,11 @@ namespace Aplikacija
 
 
 
-                SqlCommand cmd = new SqlCommand("select count (*) as cnt from tab_Logovanje where Username=@usr and password=@pass", con);
+                SqlCommand cmd = new SqlCommand("select count (*) as cnt from tab_Logovanje where Username=@usr and password=@pass and Aktivnost=1", con);
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
                 cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
-
+              
                 con.Open();
 
 
@@ -56,49 +56,47 @@ namespace Aplikacija
                     SqlConnection connection = new SqlConnection();
                     connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
-                    string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password " ;
-                    string query2 = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=False";
-                    string query3 = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=False";
-                //    if (string query1 = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password ")
-                if(query2==query3)
-                    {
-                        MessageBox.Show("Nemate pristup serveru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
-                        return;
-                    }
-
-                    DataTable dt = new DataTable();
-                    SqlCommand command = new SqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
-                    command.Parameters.AddWithValue("@password", tbSifra.Text);
-
-                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
-                    {
-                        adapter.Fill(dt);
-                        if (dt.Rows.Count > 0)
+                    string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=1" ;
+                   
+                   
+                   
+                    
+                        DataTable dt = new DataTable();
+                        SqlCommand command = new SqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+                        command.Parameters.AddWithValue("@password", tbSifra.Text);
+                  
+                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
                         {
+                            adapter.Fill(dt);
+                            if (dt.Rows.Count > 0)
+                            {
 
-                            MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Form1 frm = new Form1();
-                            this.Hide();
-                            frm.ShowDialog();
+                                MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Form1 frm = new Form1();
+                                this.Hide();
+                                frm.ShowDialog();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                Form2 frm2 = new Form2();
+                                this.Hide();
+                                frm2.ShowDialog();
+                            }
                         }
-                        else
-                        {
-                            MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            Form2 frm2 = new Form2();
-                            this.Hide();
-                            frm2.ShowDialog();
-                        }
-                    }
 
-                    connection.Close();
 
+
+
+                        connection.Close();
+                    
                 }
 
                 else
 
                 {
-                    MessageBox.Show("Proverite korisnicko ime i lozinku", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Korisnicko ime nema pristup serveru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     tbKorisnickoIme.Clear();
                     tbSifra.Clear();
                 }
@@ -121,3 +119,13 @@ namespace Aplikacija
         }
     }
 }
+/*
+            string query2 = "SELECT Aktivnost FROM tab_Logovanje WHERE [Aktivnost] = 0 and [Username] = @usr AND [password] = @password ";
+                    string query3 = "SELECT Aktivnost FROM tab_Logovanje WHERE [Aktivnost] = 0 and [Username] = @usr AND [password] = @password ";
+
+                  if (query2 == query3)
+                    {
+                        MessageBox.Show("Nemate pristup serveru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+*/
