@@ -78,6 +78,7 @@ namespace Aplikacija
             if (pass.Length > 8 && pass.Any(char.IsUpper) &&
                 pass.Any(char.IsNumber))
             {
+                
 
                 try
                 {
@@ -147,7 +148,9 @@ namespace Aplikacija
 
             else
             {
+
                 MessageBox.Show("Sifra mora sadrzati minimum 8 karaktera jedno veliko slovo i broj", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                res();
             }
 
 
@@ -205,6 +208,20 @@ namespace Aplikacija
         {
             if (e.KeyCode == Keys.Enter)
                 btnRegistracija.Focus();
+        }
+
+        private void tbSifra_KeyPress(object sender, KeyPressEventArgs e)
+        {
+          
+        }
+
+        private void tbKorisnickoIme_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            char ch = e.KeyChar;
+            if (!Char.IsLower(ch)&&(!Char.IsUpper(ch)) && ch != 8 && ch != 46)
+            {
+                e.Handled = true;
+            }
         }
     }
 

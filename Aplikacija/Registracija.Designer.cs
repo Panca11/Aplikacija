@@ -102,6 +102,7 @@
             this.tbKorisnickoIme.Size = new System.Drawing.Size(183, 20);
             this.tbKorisnickoIme.TabIndex = 5;
             this.tbKorisnickoIme.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbKorisnickoIme_KeyDown);
+            this.tbKorisnickoIme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbKorisnickoIme_KeyPress);
             // 
             // tbSifra
             // 
@@ -111,6 +112,7 @@
             this.tbSifra.Size = new System.Drawing.Size(183, 20);
             this.tbSifra.TabIndex = 6;
             this.tbSifra.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbSifra_KeyDown);
+            this.tbSifra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbSifra_KeyPress);
             // 
             // tbIme
             // 
