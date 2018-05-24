@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -44,10 +45,11 @@ namespace Aplikacija
 
             if (dr == DialogResult.Yes)
             {
-
+               
                 Logovanje l = new Logovanje();
                 this.Hide();
                 l.ShowDialog();
+                LoginTrack();
                 this.Hide();
             }
         }
@@ -58,6 +60,19 @@ namespace Aplikacija
             PKorisnika pk = new PKorisnika();
             pk.ShowDialog();
             this.Hide();
+        }
+        private void LoginTrack()
+        {
+           /* SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
+            connection.Open();
+
+            DateTime dt = DateTime.Now;
+            
+            SqlCommand cmd1 = new SqlCommand("insert into tab_Logovi (logout) values (@values) ", connection);
+            cmd1.Parameters.AddWithValue("@values", dt);
+            cmd1.ExecuteNonQuery();
+            connection.Close();*/
         }
     }
 }

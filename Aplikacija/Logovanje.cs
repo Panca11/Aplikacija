@@ -47,7 +47,7 @@ namespace Aplikacija
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
                 cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
-              
+
                 con.Open();
 
 
@@ -56,41 +56,43 @@ namespace Aplikacija
                     SqlConnection connection = new SqlConnection();
                     connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
-                    string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=1" ;
-                   
-                   
-                   
-                    
-                        DataTable dt = new DataTable();
-                        SqlCommand command = new SqlCommand(query, connection);
-                        command.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
-                        command.Parameters.AddWithValue("@password", tbSifra.Text);
-                  
-                        using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=1";
+
+
+
+
+                    DataTable dt = new DataTable();
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+                    command.Parameters.AddWithValue("@password", tbSifra.Text);
+
+                    using (SqlDataAdapter adapter = new SqlDataAdapter(command))
+                    {
+                        adapter.Fill(dt);
+                        if (dt.Rows.Count > 0)
                         {
-                            adapter.Fill(dt);
-                            if (dt.Rows.Count > 0)
-                            {
 
-                                MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Form1 frm = new Form1();
-                                this.Hide();
-                                frm.ShowDialog();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                Form2 frm2 = new Form2();
-                                this.Hide();
-                                frm2.ShowDialog();
-                            }
+                            MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Form1 frm = new Form1();
+                            this.Hide();
+                            frm.ShowDialog();
+                            LoginTrack();
                         }
+                        else
+                        {
+                            MessageBox.Show("Uspesno ste se ulogovali", "Uspesan login", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            Form2 frm2 = new Form2();
+                            this.Hide();
+                            frm2.ShowDialog();
+                            LoginTrack();
+                        }
+                    }
 
 
 
 
-                        connection.Close();
-                    
+                    connection.Close();
+
                 }
 
                 else
@@ -117,8 +119,35 @@ namespace Aplikacija
             if (e.KeyCode == Keys.Enter)
                 btnLogovanje.Focus();
         }
+        private void LoginTrack()
+        {
+            SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
+            connection.Open();
+            DateTime dt = DateTime.Now;
+            SqlCommand cmd1 = new SqlCommand("insert into tab_Logovi (start) values(@values) ", connection);            
+            cmd1.Parameters.AddWithValue("@values", dt);
+            cmd1.ExecuteNonQuery();
+           // StringBuilder sb = new StringBuilder();
+           
+          /*  sb.Append("INSERT INTO tab_Logovi");
+            sb.Append("(stat,  Aktivnost)");
+            sb.Append("VALUES (@login, @act) ");
+            SqlCommand cmd = new SqlCommand(sb.ToString(), connection);
+            SqlParameter loginarm = new SqlParameter("@start", SqlDbType.DateTime);
+            SqlParameter act = new SqlParameter("@Aktivnost", SqlDbType.Int);
+
+            cmd.Parameters.Add(loginarm);
+            cmd.Parameters.Add(act);
+
+            loginarm.Value = DateTime.Now;
+            act.Value = 1;
+            */
+            connection.Close();
+        }
     }
 }
+
 /*
             string query2 = "SELECT Aktivnost FROM tab_Logovanje WHERE [Aktivnost] = 0 and [Username] = @usr AND [password] = @password ";
                     string query3 = "SELECT Aktivnost FROM tab_Logovanje WHERE [Aktivnost] = 0 and [Username] = @usr AND [password] = @password ";

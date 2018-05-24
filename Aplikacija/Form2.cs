@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -32,6 +33,8 @@ namespace Aplikacija
                 this.Hide();
                 frm.ShowDialog();
                 this.Hide();
+                LoginTrack();
+
             }
 
         }
@@ -43,6 +46,19 @@ namespace Aplikacija
             // TODO: This line of code loads data into the 'eDUDataSet.tab_Kase' table. You can move, or remove it, as needed.
             this.tab_KaseTableAdapter.Fill(this.eDUDataSet.tab_Kase);
 
+        }
+        private void LoginTrack()
+        {
+          /*  SqlConnection connection = new SqlConnection();
+            connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
+            connection.Open();
+
+            DateTime dt = DateTime.Now;
+         
+            SqlCommand cmd1 = new SqlCommand("insert into tab_Logovi (end) values(@values) ", connection);
+            cmd1.Parameters.AddWithValue("@values", dt);
+            cmd1.ExecuteNonQuery();
+            connection.Close();*/
         }
     }
 }
