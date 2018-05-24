@@ -125,25 +125,33 @@ namespace Aplikacija
             connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
             connection.Open();
             DateTime dt = DateTime.Now;
-            SqlCommand cmd1 = new SqlCommand("insert into tab_Logovi (start) values(@values) ", connection);            
+            string act = "1";
+            SqlCommand cmd1 = new SqlCommand("insert into tab_Logovi (start,Aktivnost) values(@values,@act) ", connection);            
             cmd1.Parameters.AddWithValue("@values", dt);
+            cmd1.Parameters.AddWithValue("@act",act);
             cmd1.ExecuteNonQuery();
-           // StringBuilder sb = new StringBuilder();
-           
-          /*  sb.Append("INSERT INTO tab_Logovi");
-            sb.Append("(stat,  Aktivnost)");
-            sb.Append("VALUES (@login, @act) ");
-            SqlCommand cmd = new SqlCommand(sb.ToString(), connection);
-            SqlParameter loginarm = new SqlParameter("@start", SqlDbType.DateTime);
-            SqlParameter act = new SqlParameter("@Aktivnost", SqlDbType.Int);
+            // StringBuilder sb = new StringBuilder();
 
-            cmd.Parameters.Add(loginarm);
-            cmd.Parameters.Add(act);
+            /*  sb.Append("INSERT INTO tab_Logovi");
+              sb.Append("(stat,  Aktivnost)");
+              sb.Append("VALUES (@login, @act) ");
+              SqlCommand cmd = new SqlCommand(sb.ToString(), connection);
+              SqlParameter loginarm = new SqlParameter("@start", SqlDbType.DateTime);
+              SqlParameter act = new SqlParameter("@Aktivnost", SqlDbType.Int);
 
-            loginarm.Value = DateTime.Now;
-            act.Value = 1;
-            */
-            connection.Close();
+              cmd.Parameters.Add(loginarm);
+              cmd.Parameters.Add(act);
+
+              loginarm.Value = DateTime.Now;
+              act.Value = 1;
+              */
+           /* SqlCommand komanda = new SqlCommand(connection.ToString());
+
+            SqlParameter Aktivnostparam = new SqlParameter("@Aktivnost", SqlDbType.Bit);
+            komanda.Parameters.Add(Aktivnostparam);
+            Aktivnostparam.Value = "1";
+
+            connection.Close();*/
         }
     }
 }

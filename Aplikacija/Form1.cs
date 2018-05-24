@@ -63,16 +63,16 @@ namespace Aplikacija
         }
         private void LoginTrack()
         {
-           /* SqlConnection connection = new SqlConnection();
+           SqlConnection connection = new SqlConnection();
             connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
             connection.Open();
 
             DateTime dt = DateTime.Now;
             
-            SqlCommand cmd1 = new SqlCommand("insert into tab_Logovi (logout) values (@values) ", connection);
+            SqlCommand cmd1 = new SqlCommand("update tab_Logovi set logout=@values ,Aktivnost=0 ", connection);
             cmd1.Parameters.AddWithValue("@values", dt);
             cmd1.ExecuteNonQuery();
-            connection.Close();*/
+            connection.Close();
         }
     }
 }
