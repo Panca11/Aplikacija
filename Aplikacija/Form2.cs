@@ -42,6 +42,7 @@ namespace Aplikacija
 
         private void Form2_Load(object sender, EventArgs e)
         {
+
             // TODO: This line of code loads data into the 'eDUDataSet1.tab_Objekti' table. You can move, or remove it, as needed.
             this.tab_ObjektiTableAdapter.Fill(this.eDUDataSet1.tab_Objekti);
             // TODO: This line of code loads data into the 'eDUDataSet.tab_Kase' table. You can move, or remove it, as needed.

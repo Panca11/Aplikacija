@@ -60,6 +60,29 @@ namespace Aplikacija
             konekcija.Open();
             var rez = komanda1.ExecuteScalar();
 
+            StringBuilder sb2 = new StringBuilder();
+
+            sb2.Append("select id from tab_Logovanje where Username=@usr and Aktivnost=1");
+
+            SqlCommand komanda2 = new SqlCommand(sb1.ToString(), konekcija);
+            komanda2.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+
+            konekcija.Close();
+
+            konekcija.Open();
+            var rez1 = komanda1.ExecuteScalar();
+
+            if (rez1 != null)
+            {
+                MessageBox.Show("Korisnicko ime vec postoji", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                res();
+                return;
+            }
+
+
+
+
+
             if (rez != null)
             {
                 MessageBox.Show("Korisnicko ime vec postoji", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -218,7 +241,7 @@ namespace Aplikacija
         private void tbKorisnickoIme_KeyPress(object sender, KeyPressEventArgs e)
         {
             char ch = e.KeyChar;
-            if (!Char.IsLower(ch)&&(!Char.IsUpper(ch)) && ch != 8 && ch != 46)
+            if (!Char.IsLower(ch)&&(!Char.IsUpper(ch)) && ch != 8 && ch != 46 && !Char.IsNumber(ch))
             {
                 e.Handled = true;
             }
