@@ -33,30 +33,33 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.eDUDataSet = new Aplikacija.EDUDataSet();
-            this.tabKaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tab_KaseTableAdapter = new Aplikacija.EDUDataSetTableAdapters.tab_KaseTableAdapter();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sifobjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.brojkaseDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ipadresaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aktivnostDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.tabKaseBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eDUDataSet = new Aplikacija.EDUDataSet();
+            this.tab_KaseTableAdapter = new Aplikacija.EDUDataSetTableAdapters.tab_KaseTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.eDUDataSet1 = new Aplikacija.EDUDataSet1();
-            this.tabObjektiBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.tab_ObjektiTableAdapter = new Aplikacija.EDUDataSet1TableAdapters.tab_ObjektiTableAdapter();
             this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sifobjDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ipadresaDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.aktivnostDataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tipBODataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tabObjektiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.eDUDataSet1 = new Aplikacija.EDUDataSet1();
+            this.tab_ObjektiTableAdapter = new Aplikacija.EDUDataSet1TableAdapters.tab_ObjektiTableAdapter();
+            this.btnSveKase = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -96,20 +99,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(544, 310);
             this.dataGridView1.TabIndex = 12;
             // 
-            // eDUDataSet
-            // 
-            this.eDUDataSet.DataSetName = "EDUDataSet";
-            this.eDUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabKaseBindingSource
-            // 
-            this.tabKaseBindingSource.DataMember = "tab_Kase";
-            this.tabKaseBindingSource.DataSource = this.eDUDataSet;
-            // 
-            // tab_KaseTableAdapter
-            // 
-            this.tab_KaseTableAdapter.ClearBeforeFill = true;
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
@@ -141,6 +130,20 @@
             this.aktivnostDataGridViewCheckBoxColumn.HeaderText = "Aktivnost";
             this.aktivnostDataGridViewCheckBoxColumn.Name = "aktivnostDataGridViewCheckBoxColumn";
             // 
+            // tabKaseBindingSource
+            // 
+            this.tabKaseBindingSource.DataMember = "tab_Kase";
+            this.tabKaseBindingSource.DataSource = this.eDUDataSet;
+            // 
+            // eDUDataSet
+            // 
+            this.eDUDataSet.DataSetName = "EDUDataSet";
+            this.eDUDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tab_KaseTableAdapter
+            // 
+            this.tab_KaseTableAdapter.ClearBeforeFill = true;
+            // 
             // dataGridView2
             // 
             this.dataGridView2.AutoGenerateColumns = false;
@@ -156,20 +159,8 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(548, 310);
             this.dataGridView2.TabIndex = 13;
-            // 
-            // eDUDataSet1
-            // 
-            this.eDUDataSet1.DataSetName = "EDUDataSet1";
-            this.eDUDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tabObjektiBindingSource
-            // 
-            this.tabObjektiBindingSource.DataMember = "tab_Objekti";
-            this.tabObjektiBindingSource.DataSource = this.eDUDataSet1;
-            // 
-            // tab_ObjektiTableAdapter
-            // 
-            this.tab_ObjektiTableAdapter.ClearBeforeFill = true;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridView2.SelectionChanged += new System.EventHandler(this.dataGridView2_SelectionChanged);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -202,12 +193,47 @@
             this.tipBODataGridViewTextBoxColumn.HeaderText = "TipBO";
             this.tipBODataGridViewTextBoxColumn.Name = "tipBODataGridViewTextBoxColumn";
             // 
+            // tabObjektiBindingSource
+            // 
+            this.tabObjektiBindingSource.DataMember = "tab_Objekti";
+            this.tabObjektiBindingSource.DataSource = this.eDUDataSet1;
+            // 
+            // eDUDataSet1
+            // 
+            this.eDUDataSet1.DataSetName = "EDUDataSet1";
+            this.eDUDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tab_ObjektiTableAdapter
+            // 
+            this.tab_ObjektiTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnSveKase
+            // 
+            this.btnSveKase.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSveKase.Location = new System.Drawing.Point(12, 415);
+            this.btnSveKase.Name = "btnSveKase";
+            this.btnSveKase.Size = new System.Drawing.Size(94, 40);
+            this.btnSveKase.TabIndex = 14;
+            this.btnSveKase.Text = "Sve kase";
+            this.btnSveKase.UseVisualStyleBackColor = true;
+            this.btnSveKase.Click += new System.EventHandler(this.btnSveKase_Click);
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(331, 416);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(240, 39);
+            this.dataGridView3.TabIndex = 15;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
-            this.ClientSize = new System.Drawing.Size(1122, 443);
+            this.ClientSize = new System.Drawing.Size(1122, 479);
+            this.Controls.Add(this.dataGridView3);
+            this.Controls.Add(this.btnSveKase);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
@@ -219,11 +245,12 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -252,5 +279,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ipadresaDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewCheckBoxColumn aktivnostDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipBODataGridViewTextBoxColumn;
+        private System.Windows.Forms.Button btnSveKase;
+        private System.Windows.Forms.DataGridView dataGridView3;
     }
 }

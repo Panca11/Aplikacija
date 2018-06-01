@@ -157,7 +157,7 @@ namespace Aplikacija
                     MessageBox.Show("Uspesno ste se registovali.", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     this.Close();
-                    Logovanje log = new Logovanje();
+                    Form1 log = new Form1();
                     log.Show();
                 }
 
@@ -176,7 +176,7 @@ namespace Aplikacija
                 res();
             }
 
-
+           
 
         }
 

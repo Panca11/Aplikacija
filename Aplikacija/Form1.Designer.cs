@@ -52,13 +52,6 @@
             this.eDUDataSet5 = new Aplikacija.EDUDataSet5();
             this.tab_ObjektiTableAdapter2 = new Aplikacija.EDUDataSet5TableAdapters.tab_ObjektiTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fkidObjDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.messageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.startDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.logoutDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.aktivnostDataGridViewCheckBoxColumn2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.tabLogoviBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.eDUDataSet2 = new Aplikacija.EDUDataSet2();
             this.tab_LogoviTableAdapter = new Aplikacija.EDUDataSet2TableAdapters.tab_LogoviTableAdapter();
@@ -72,6 +65,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource2)).BeginInit();
@@ -79,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogoviBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource1)).BeginInit();
@@ -87,6 +82,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistracija
@@ -256,60 +252,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView3
-            // 
-            this.dataGridView3.AutoGenerateColumns = false;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn2,
-            this.fkidObjDataGridViewTextBoxColumn,
-            this.messageDataGridViewTextBoxColumn,
-            this.startDataGridViewTextBoxColumn,
-            this.logoutDataGridViewTextBoxColumn,
-            this.aktivnostDataGridViewCheckBoxColumn2});
-            this.dataGridView3.DataSource = this.tabLogoviBindingSource;
-            this.dataGridView3.Location = new System.Drawing.Point(323, 403);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(659, 262);
-            this.dataGridView3.TabIndex = 16;
-            // 
-            // idDataGridViewTextBoxColumn2
-            // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "id";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // fkidObjDataGridViewTextBoxColumn
-            // 
-            this.fkidObjDataGridViewTextBoxColumn.DataPropertyName = "fk_idObj";
-            this.fkidObjDataGridViewTextBoxColumn.HeaderText = "fk_idObj";
-            this.fkidObjDataGridViewTextBoxColumn.Name = "fkidObjDataGridViewTextBoxColumn";
-            // 
-            // messageDataGridViewTextBoxColumn
-            // 
-            this.messageDataGridViewTextBoxColumn.DataPropertyName = "message";
-            this.messageDataGridViewTextBoxColumn.HeaderText = "message";
-            this.messageDataGridViewTextBoxColumn.Name = "messageDataGridViewTextBoxColumn";
-            // 
-            // startDataGridViewTextBoxColumn
-            // 
-            this.startDataGridViewTextBoxColumn.DataPropertyName = "start";
-            this.startDataGridViewTextBoxColumn.HeaderText = "start";
-            this.startDataGridViewTextBoxColumn.Name = "startDataGridViewTextBoxColumn";
-            // 
-            // logoutDataGridViewTextBoxColumn
-            // 
-            this.logoutDataGridViewTextBoxColumn.DataPropertyName = "logout";
-            this.logoutDataGridViewTextBoxColumn.HeaderText = "logout";
-            this.logoutDataGridViewTextBoxColumn.Name = "logoutDataGridViewTextBoxColumn";
-            // 
-            // aktivnostDataGridViewCheckBoxColumn2
-            // 
-            this.aktivnostDataGridViewCheckBoxColumn2.DataPropertyName = "Aktivnost";
-            this.aktivnostDataGridViewCheckBoxColumn2.HeaderText = "Aktivnost";
-            this.aktivnostDataGridViewCheckBoxColumn2.Name = "aktivnostDataGridViewCheckBoxColumn2";
-            // 
             // tabLogoviBindingSource
             // 
             this.tabLogoviBindingSource.DataMember = "tab_Logovi";
@@ -384,18 +326,53 @@
             this.label4.TabIndex = 21;
             this.label4.Text = "Logovi";
             // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(375, 416);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.Size = new System.Drawing.Size(773, 227);
+            this.dataGridView3.TabIndex = 22;
+            this.dataGridView3.SelectionChanged += new System.EventHandler(this.dataGridView3_SelectionChanged);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(452, 364);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 35);
+            this.button2.TabIndex = 23;
+            this.button2.Text = "Azuriraj Kase";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Agency FB", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(662, 365);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(136, 35);
+            this.button3.TabIndex = 24;
+            this.button3.Text = "Azuriraj Objekte";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Crimson;
             this.ClientSize = new System.Drawing.Size(1214, 697);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSveKase);
             this.Controls.Add(this.btnNoviObjekat);
-            this.Controls.Add(this.dataGridView3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
@@ -414,7 +391,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabLogoviBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabObjektiBindingSource1)).EndInit();
@@ -422,6 +398,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.eDUDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabKaseBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -456,20 +433,16 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn aktivnostDataGridViewCheckBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn tipBODataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView3;
         private EDUDataSet2 eDUDataSet2;
         private System.Windows.Forms.BindingSource tabLogoviBindingSource;
         private EDUDataSet2TableAdapters.tab_LogoviTableAdapter tab_LogoviTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fkidObjDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn messageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn startDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn logoutDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn aktivnostDataGridViewCheckBoxColumn2;
         private System.Windows.Forms.Button btnNoviObjekat;
         private System.Windows.Forms.Button btnSveKase;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

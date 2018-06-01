@@ -35,14 +35,13 @@ namespace Aplikacija
             if (string.IsNullOrEmpty(tbKorisnickoIme.Text) || string.IsNullOrEmpty(tbSifra.Text))//proverava da li su sva polja popunjena
             {
                 MessageBox.Show("Morate popuniti polja za login.", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
             }
             else
             {
+
                 SqlConnection con = new SqlConnection();
                 con.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
-
-
-
                 SqlCommand cmd = new SqlCommand("select count (*) as cnt from tab_Logovanje where Username=@usr and password=@pass and Aktivnost=1", con);
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
@@ -57,9 +56,6 @@ namespace Aplikacija
                     connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
                     string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [Username] = @usr AND [password] = @password and [Aktivnost]=1";
-
-
-
 
                     DataTable dt = new DataTable();
                     SqlCommand command = new SqlCommand(query, connection);
@@ -84,7 +80,7 @@ namespace Aplikacija
                             Form2 frm2 = new Form2();
                             this.Hide();
                             frm2.ShowDialog();
-                            LoginTrack();
+                              LoginTrack();
                         }
                     }
 
@@ -102,6 +98,7 @@ namespace Aplikacija
                     tbKorisnickoIme.Clear();
                     tbSifra.Clear();
                 }
+
             }
 
 
@@ -111,7 +108,11 @@ namespace Aplikacija
         private void tbKorisnickoIme_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                tbSifra.Focus();
+            {
+
+                //return;
+            }
+
         }
 
         private void tbSifra_KeyDown(object sender, KeyEventArgs e)
@@ -121,37 +122,58 @@ namespace Aplikacija
         }
         private void LoginTrack()
         {
-            SqlConnection connection = new SqlConnection();
-            connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
-            connection.Open();
-            DateTime dt = DateTime.Now;
-            string act = "1";
-            SqlCommand cmd1 = new SqlCommand("insert into tab_Logovi (start,Aktivnost) values(@values,@act) ", connection);            
-            cmd1.Parameters.AddWithValue("@values", dt);
-            cmd1.Parameters.AddWithValue("@act",act);
-            cmd1.ExecuteNonQuery();
-            // StringBuilder sb = new StringBuilder();
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
 
-            /*  sb.Append("INSERT INTO tab_Logovi");
-              sb.Append("(stat,  Aktivnost)");
-              sb.Append("VALUES (@login, @act) ");
-              SqlCommand cmd = new SqlCommand(sb.ToString(), connection);
-              SqlParameter loginarm = new SqlParameter("@start", SqlDbType.DateTime);
-              SqlParameter act = new SqlParameter("@Aktivnost", SqlDbType.Int);
 
-              cmd.Parameters.Add(loginarm);
-              cmd.Parameters.Add(act);
 
-              loginarm.Value = DateTime.Now;
-              act.Value = 1;
-              */
-           /* SqlCommand komanda = new SqlCommand(connection.ToString());
+            SqlCommand cmd = new SqlCommand("insert into tab_Logovi where star=@start", con);
+            cmd.Parameters.Clear();
+            cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
+                                                                      //     cmd.Parameters.AddWithValue("@pass", tbSifra.Text);
 
-            SqlParameter Aktivnostparam = new SqlParameter("@Aktivnost", SqlDbType.Bit);
-            komanda.Parameters.Add(Aktivnostparam);
-            Aktivnostparam.Value = "1";
+            con.Open();
 
-            connection.Close();*/
+
+            if (cmd.ExecuteScalar().ToString() == "1")//proverava uzete podatke sa forme 
+            {
+                SqlConnection connection = new SqlConnection();
+                connection.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
+
+                string query = "SELECT Admin FROM tab_Logovanje WHERE [Admin] = 1 and [password] = @usr  and [Aktivnost]=1";
+
+
+                DataTable dt = new DataTable();
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);
+                return;
+
+            }
+
+        }
+
+        private void tbSifra_Leave(object sender, EventArgs e)
+        {
+
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=localhost;Initial Catalog=EDU;Integrated Security=True";
+
+            SqlCommand cmd1 = new SqlCommand("select count (*) as cnt from tab_Logovanje where password=@pass and Aktivnost=1", con);
+            cmd1.Parameters.Clear();
+            //     cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
+            cmd1.Parameters.AddWithValue("@pass", tbSifra.Text);
+
+            con.Open();
+
+
+            if (cmd1.ExecuteScalar().ToString() == "0")//proverava uzete podatke sa forme 
+            {
+                MessageBox.Show("Proverite sifru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                return;
+            }
+
+            con.Close();
+
         }
     }
 }
@@ -165,4 +187,31 @@ namespace Aplikacija
                         MessageBox.Show("Nemate pristup serveru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
                         return;
                     }
+
+
+
+
+
+
+
+
+
+
+    
+
+
+                SqlCommand cmd1 = new SqlCommand("select count (*) as cnt from tab_Logovanje where password=@pass and Aktivnost=1", con);
+                cmd1.Parameters.Clear();
+           //     cmd.Parameters.AddWithValue("@usr", tbKorisnickoIme.Text);//uzima podatke sa forme
+                cmd1.Parameters.AddWithValue("@pass", tbSifra.Text);
+
+                con.Open();
+
+
+                if (cmd1.ExecuteScalar().ToString() == "0")//proverava uzete podatke sa forme 
+                {
+                  MessageBox.Show("Proverite sifru", "Obavestenje", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+                        return;
+                    }
+                
 */
