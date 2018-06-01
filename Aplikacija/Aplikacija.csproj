@@ -56,6 +56,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EDUDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="EDUDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EDUDataSet2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="EDUDataSet4.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -83,6 +88,12 @@
     <Compile Include="Form2.Designer.cs">
       <DependentUpon>Form2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDodajObj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajObj.Designer.cs">
+      <DependentUpon>FormDodajObj.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logovanje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form2.resx">
       <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajObj.resx">
+      <DependentUpon>FormDodajObj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Logovanje.resx">
       <DependentUpon>Logovanje.cs</DependentUpon>
@@ -148,6 +162,17 @@
     </None>
     <None Include="EDUDataSet1.xss">
       <DependentUpon>EDUDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet2.xsc">
+      <DependentUpon>EDUDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="EDUDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>EDUDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="EDUDataSet2.xss">
+      <DependentUpon>EDUDataSet2.xsd</DependentUpon>
     </None>
     <None Include="EDUDataSet4.xsc">
       <DependentUpon>EDUDataSet4.xsd</DependentUpon>
